@@ -125,13 +125,19 @@ Synchronization should primarily amplify expression rather than compensate for p
 
 ## Prime
 
-Prime represents the sword entering an altered combat state.
+Prime represents Ion arming the alternate expression of the next Technique.
 
-Prime is not a resource consumed continuously.
+Prime is not a combat resource.
 
-It is a temporary transformation of combat behavior.
+Prime is not a damage increase.
 
-Prime changes what subsequent techniques become capable of.
+Prime is not a charge attack.
+
+Prime does not immediately execute an attack.
+
+The next Technique executes in its Primed form.
+
+Prime is consumed immediately after that Technique executes.
 
 Its exact mechanics belong to the Combat Language Specification.
 

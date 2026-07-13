@@ -80,10 +80,14 @@ The sword is not a conventional weapon with interchangeable light and heavy atta
 The foundational input model is:
 
 - **WASD:** conventional movement;
-- **attack direction matching horizontal movement:** forward slash;
+- **horizontal combat input matching Irys' current facing direction:** Advance;
 - **up attack:** upward technique;
 - **down attack:** downward technique;
-- **attack opposite horizontal movement:** charge, alternate state, or transformation of the next technique.
+- **opposite horizontal combat input:** Prime, which arms the alternate expression of the next technique.
+
+Advance and Prime are relative to facing rather than absolute left or right.
+
+If Irys is stationary, her current facing determines which horizontal combat input represents Advance.
 
 Each direction must have a distinct purpose beyond damage.
 
