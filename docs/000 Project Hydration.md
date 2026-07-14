@@ -199,6 +199,7 @@ Preferred workflow:
 - Prefer cohesion over novelty.
 - Prefer elegant systems over larger numbers of systems.
 - Once a decision is settled, treat it as stable unless a contradiction appears.
+- Once a concept is sufficiently stable, promote it into its owning specification rather than continuing to whiteboard it.
 
 Avoid large speculative drafts before sufficient whiteboarding has occurred.
 
@@ -257,10 +258,11 @@ Approved
 - Design Philosophy
 - Vision
 - Combat Model
+- Combat Language Specification
 
 Currently Under Construction
 
-- Combat Language Specification
+- Player Feel Specification
 
 ---
 
@@ -287,7 +289,9 @@ Additional discoveries should enter the Design Notebook before becoming canonica
 
 Continue interactive design of:
 
-docs/design/003 Combat Language Specification.md
+`docs/design/004 Player Feel Specification.md`
+
+`docs/design/003 Combat Language Specification.md` is the canonical definition of The Language. Revise it only when contradictions or implementation ambiguities are discovered.
 
 Discover one concept at a time.
 
