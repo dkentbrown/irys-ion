@@ -259,10 +259,12 @@ Approved
 - Vision
 - Combat Model
 - Combat Language Specification
+- Player Feel Specification
+- Narrative Specification
 
 Currently Under Construction
 
-- Player Feel Specification
+- World Bible
 
 ---
 
@@ -289,17 +291,17 @@ Additional discoveries should enter the Design Notebook before becoming canonica
 
 Continue interactive design of:
 
-`docs/design/004 Player Feel Specification.md`
+`docs/design/008 World Bible.md`
 
-`docs/design/003 Combat Language Specification.md` is the canonical definition of The Language. Revise it only when contradictions or implementation ambiguities are discovered.
+`docs/narrative/009 Narrative Specification.md` is the canonical definition of the self-contained story, run continuity, Ark reveal, boss progression, final act, and ending.
 
-Discover one concept at a time.
+Revise settled specifications only when contradictions or implementation ambiguities are discovered.
 
-Notebook first.
+Optimize for implementation readiness rather than documentation completeness.
 
-Specification second.
+The World Bible should define only the Ark, concealed transit link, playable megastructure route, stage identities, control center, return route, and final Ark state.
 
-Avoid implementation work until the specifications are sufficiently complete.
+Do not expand the broader planet or the origin of the megastructure unless their absence would materially reduce Sol’s chance of implementing the game successfully.
 
 ---
 

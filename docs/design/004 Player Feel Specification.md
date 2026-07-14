@@ -1,6 +1,6 @@
 # Player Feel Specification
 
-Status: Draft
+Status: Approved
 
 ## Purpose
 
