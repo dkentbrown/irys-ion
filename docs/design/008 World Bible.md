@@ -1,6 +1,6 @@
 # World Bible
 
-Status: Draft
+Status: Approved
 
 ## Purpose
 
@@ -250,6 +250,101 @@ The final arena should remain visibly recognizable as the Ark.
 Pods and dormant Irys bodies should remain present so the stakes of the confrontation and the ending are spatially immediate.
 
 The Ark’s familiar preparation space should not be replaced by an unrelated final arena.
+
+## Environmental Activity Arc
+
+The planetary megastructure must change in perceived activity across the campaign.
+
+Early regions should feel:
+
+- ancient;
+- incomprehensibly vast;
+- dormant or only partially active;
+- larger than the player can understand from the visible route;
+- filled with machinery whose complete purpose cannot be determined.
+
+Scale should be communicated through:
+
+- deep parallax layers;
+- distant moving structures;
+- enormous shafts and voids;
+- machinery extending beyond the frame;
+- limited exterior glimpses;
+- inactive systems far larger than the playable foreground.
+
+As the player advances, the megastructure becomes increasingly awake.
+
+Later regions should reveal:
+
+- active maintenance;
+- self-repair;
+- coordinated fabrication;
+- moving assembly infrastructure;
+- continuous manufacturing;
+- precise environmental control;
+- visible systems performing purposeful work.
+
+The final one or two megastructure regions should feel fully active, maintained, and controlled rather than ruined.
+
+The control center is not an ancient ruin. It is the planetary AI’s immaculate, functioning domain.
+
+## Anti-Irys Containment Chamber
+
+An adjoining chamber beyond the control-center command mech contains the inactive Anti-Irys substrate.
+
+The chamber must visually establish:
+
+- Anti-Irys as complete but inert;
+- tendrils, restraints, a partial pod, or another support structure;
+- the planetary AI’s energy distributed throughout the room and facility;
+- a clear route through which that energy drains into Anti-Irys;
+- the counterfeit blade manifesting only when the transfer completes.
+
+The chamber should become visibly depleted and dark as the planetary AI abandons the megastructure.
+
+Anti-Irys leaves the control-center region after activation. The player does not fight her there.
+
+## Shutdown Return State
+
+After the planetary AI transfers into its blade-form and departs with Anti-Irys, the megastructure enters a shutdown condition.
+
+The return route should feel like movement through a facility whose coordinating intelligence has left it.
+
+Environmental changes include:
+
+- planetary-AI illumination disappearing;
+- machinery halting, coasting, flickering, or failing;
+- doors and transit systems operating irregularly;
+- previously precise systems becoming unstable;
+- familiar regions appearing inert or partially collapsed;
+- emergency routes and shortcuts opening;
+- existing enemies behaving without central coordination.
+
+The return route remains shorter than the outward route.
+
+It does not introduce a fourth environment tier or replay the complete campaign in reverse.
+
+## Final Pod-Chamber Arena
+
+The final confrontation occurs in the Ark’s main pod chamber rather than in an unrelated arena.
+
+The player must remain surrounded by the visible dormant candidates that have defined the roguelite loop.
+
+During scripted phase transitions, the Ark protects those candidates by:
+
+- raising barriers;
+- deploying shutters;
+- retracting pod banks;
+- shifting pods away from threatened areas;
+- isolating a smaller protected cluster as the chamber becomes damaged.
+
+These changes create authored combat geometry but never become an escort or defense objective.
+
+Pod losses, damaged partitions, and protection failures are scripted rather than determined by player performance.
+
+The final environment must make the Ark intelligence feel alive through its behavior. Its machinery, lighting, barriers, pod movement, and protective choices are its primary physical expression.
+
+When the planetary-AI blade attempts to escape after Anti-Irys falls, the Ark itself prevents the return or teleportation attempt.
 
 ## Ending Environment
 

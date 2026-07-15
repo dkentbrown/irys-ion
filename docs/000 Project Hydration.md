@@ -139,6 +139,15 @@ Current ownership:
 010 Technical
     Engineering constraints.
 
+011 Art Direction
+    Visual identity, character construction, environments, camera, effects, HUD, and cutscene presentation.
+
+012 Audio Direction
+    Music, dialogue tones, sound effects, sonic identities, environmental audio, and mix priorities.
+
+999 Sol Implementation Specification
+    Final integrated implementation package delivered to Sol.
+
 Notebook
     Candidate ideas only.
 
@@ -192,7 +201,7 @@ The assistant acts as Lead Systems Designer.
 
 Preferred workflow:
 
-- Ask one foundational question at a time.
+- Ask only genuinely foundational or implementation-blocking questions. Batch related choices, infer reasonable defaults, and avoid serial micro-questions.
 - Build systems incrementally.
 - Delay implementation details until governing abstractions exist.
 - Push back when necessary.
@@ -200,6 +209,9 @@ Preferred workflow:
 - Prefer elegant systems over larger numbers of systems.
 - Once a decision is settled, treat it as stable unless a contradiction appears.
 - Once a concept is sufficiently stable, promote it into its owning specification rather than continuing to whiteboard it.
+- Keep the active design section moving without waiting for the Creative Director to say “continue.”
+- Do not end on a passive summary while meaningful work remains in the active section.
+- Treat repository updates as milestones and batch settled decisions into their owning specifications.
 
 Avoid large speculative drafts before sufficient whiteboarding has occurred.
 
@@ -261,10 +273,15 @@ Approved
 - Combat Language Specification
 - Player Feel Specification
 - Narrative Specification
+- World Bible
+- Progression Specification
+- Boss Bible
+- Enemy Bible
 
 Currently Under Construction
 
-- World Bible
+- Art Direction
+- Audio Direction
 
 ---
 
@@ -291,17 +308,23 @@ Additional discoveries should enter the Design Notebook before becoming canonica
 
 Continue interactive design of:
 
-`docs/design/008 World Bible.md`
+`docs/audio/012 Audio Direction.md`
 
-`docs/narrative/009 Narrative Specification.md` is the canonical definition of the self-contained story, run continuity, Ark reveal, boss progression, final act, and ending.
+`docs/art/011 Art Direction.md` now contains the agreed visual foundation and remains a draft until final presentation gaps are closed.
+
+`docs/audio/012 Audio Direction.md` contains the agreed score and sound foundation and remains the active section.
+
+After Art Direction and Audio Direction are approved, define:
+
+`docs/technical/010 Technical Specification.md`
+
+Then assemble:
+
+`docs/999 Sol Implementation Specification.md`
 
 Revise settled specifications only when contradictions or implementation ambiguities are discovered.
 
 Optimize for implementation readiness rather than documentation completeness.
-
-The World Bible should define only the Ark, concealed transit link, playable megastructure route, stage identities, control center, return route, and final Ark state.
-
-Do not expand the broader planet or the origin of the megastructure unless their absence would materially reduce Sol’s chance of implementing the game successfully.
 
 ---
 

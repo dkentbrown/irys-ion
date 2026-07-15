@@ -254,29 +254,36 @@ The created bodies are products of Irys rather than a continuing person repeated
 
 Ion believes the Ark remains outside the planetary AI’s direct reach.
 
-Repeated returns allow the planetary AI to observe and eventually trace Ion.
+Repeated returns allow the planetary AI to observe Ion’s persistent travel pattern and eventually identify the Ark’s location or access relationship.
 
-After the apparent defeat of the planetary AI’s control-center guardian, it reveals that it has already reached the Ark.
+After the apparent defeat of the control-center command mech, the planetary AI reveals that it now knows where the Ark is.
 
 A key line may be presented substantially as:
 
 > I’ve seen you come and go a thousand times. How long did you think you could stay hidden from me?
 
-The roguelite loop itself therefore creates the vulnerability that enables the final attack.
+The roguelite loop itself creates the vulnerability that enables the final attack.
 
 ### The Mirrored Final Form
 
-For the final confrontation, the planetary AI assumes a blade-form analogous to Ion.
+Beyond the defeated control-center command mech is an adjoining containment chamber holding a fixed Anti-Irys substrate.
 
-It binds to or controls another created Irys body at the Ark.
+Anti-Irys is complete but inactive.
 
-The player confronts an opposing configuration that mirrors Ion and its wielder.
+The planetary AI drains its energy and presence from the control center, concentrates through the chamber’s support systems, and manifests as a blade in Anti-Irys’s hand.
+
+The planetary AI thanks Ion for freeing it. Ion’s successful penetration of the control center has removed the restriction that previously prevented the planetary AI from leaving through a mobile embodied form.
+
+The final opposing configuration mirrors Irys and Ion:
+
+- Anti-Irys is the manufactured wielder;
+- the planetary AI is the persistent blade intelligence.
 
 The opposing body is not the true antagonist.
 
 The blade is the planetary AI itself.
 
-Defeating the opposing wielder defeats the planetary AI because it has committed itself to that embodied blade-form.
+Anti-Irys departs toward the Ark while the current Irys and Ion must retreat through the shutting-down megastructure and return by the concealed transit link.
 
 ## Boss Progression
 
@@ -350,52 +357,71 @@ The blade is the planetary AI itself.
 
 After defeating the three outward guardians, Ion and the current Irys penetrate the planetary AI’s control center.
 
-The stage culminates in the advanced technological control-center boss.
+The stage culminates in a tall knight-like bipedal command mech. This boss represents the planetary AI’s apparent technical apex and should plausibly appear to be the final boss.
 
-This boss should appear to be the planetary AI’s ultimate defensive form.
+Defeating it appears to complete the mission.
 
-Defeating that boss appears to complete the mission.
+### Anti-Irys Transfer
 
-### Reversal
+An adjoining chamber contains the inactive Anti-Irys substrate, suspended by tendrils, contained within a partial pod, or supported above a lift platform.
 
-The planetary AI reveals that the control-center boss was not its final embodiment.
+The planetary AI’s light drains from the surrounding panels, conduits, machinery, and control systems into Anti-Irys.
 
-Repeated observation of Ion’s returns allowed it to trace the route back to the Ark.
+As the facility darkens, the planetary AI manifests as a counterfeit blade in Anti-Irys’s hand.
 
-It has reached the Ark by exploiting the connection exposed through Ion’s repeated travel.
+The planetary AI states that Ion has freed it from the control center’s confinement.
 
-It has activated, seized, or bound itself to one of the Ark’s created Irys bodies.
+It also reveals that repeated observation of Ion’s returns has exposed the Ark.
 
-The planetary AI has assumed a blade-form analogous to Ion.
-
-A key line may be presented substantially as:
-
-> I’ve seen you come and go a thousand times. How long did you think you could stay hidden from me?
+Anti-Irys rises and departs toward the Ark. She is not fought in the control center.
 
 ### Return Stage
 
-The current Irys and Ion must travel back to the Ark.
+The current Irys and Ion must return to the concealed transit link.
 
-The return route should be shorter and more urgent than the outward journey.
+The return route is shorter and more urgent than the outward journey.
 
-Previously familiar spaces may be altered, destabilized, bypassed, or recontextualized.
+The megastructure is now in shutdown because the planetary AI has withdrawn its active presence into the blade:
 
-The return should not require replaying the complete outward boss sequence in reverse.
+- its characteristic light is gone;
+- machinery loses coordinated control;
+- systems halt or fail;
+- existing enemies become unstable and erratic;
+- familiar spaces are recontextualized through darkness, failure, and opened emergency routes.
+
+The return does not replay the complete outward boss sequence and does not introduce a new enemy generation.
 
 ### Final Stage: The Ark
 
-The Ark changes from a place of safety, selection, and renewal into the final battlefield.
+Anti-Irys reaches the Ark before the player.
 
-The final confrontation is:
+The final confrontation occurs in the main pod chamber among the dormant Irys candidates.
+
+The opposing configuration is:
 
 - the player’s current Irys wielding Ion;
-- another created Irys wielding the planetary AI in blade-form.
+- the fixed Anti-Irys substrate wielding the planetary AI in blade-form.
 
-The opposing configuration is the planetary AI’s final conclusion after observing Ion’s repeated success.
+The Ark intelligence actively tries to protect the dormant candidates through scripted barriers, shutters, pod retractions, and arena transformations.
 
-Defeating the opposing Irys defeats the planetary AI because it has committed itself to that embodied blade-form.
+The player is not assigned a pod-defense objective. Any pod damage or loss is scripted.
+
+The encounter remains a direct duel and the final mastery test of The Language.
 
 ## Ending
+
+When Anti-Irys is defeated, the planetary-AI blade rises from its fallen substrate in the same manner that Ion rises from a defeated Irys body.
+
+It attempts to phase, teleport, or return to its former control-center chamber.
+
+Irys—the Ark intelligence—prevents the planetary AI from escaping.
+
+Ion then delivers the direct killing blow to the planetary-AI blade.
+
+The final victory therefore requires both persistent protagonists:
+
+- Irys contains the planetary AI;
+- Ion destroys it.
 
 The final conflict critically compromises the Ark.
 
@@ -405,9 +431,7 @@ Irys, the Ark intelligence, and Ion merge into one consciousness.
 
 That merged consciousness fractures and distributes itself across the Ark’s created bodies.
 
-The resulting Irys are not one consciousness controlling many bodies.
-
-They awaken as independent individuals.
+The resulting Irys are not one consciousness controlling many bodies. They awaken as independent individuals.
 
 The bodies that had previously existed as replaceable substrates, candidates, defects, and failed possibilities become people.
 
@@ -461,9 +485,22 @@ The implemented game must communicate:
 - The boss progression is fixed and authored rather than procedurally adaptive.
 - The third outward boss is a large restrained or environmentally integrated proto-Irys.
 - The control-center boss is an advanced technological mech and false final boss.
+- The control-center false final is a knight-like bipedal command mech.
+- An adjoining chamber contains the inactive fixed Anti-Irys substrate.
+- The planetary AI drains from the facility and manifests as Anti-Irys’s blade.
+- The planetary AI thanks Ion for freeing it from control-center confinement.
+- Anti-Irys departs toward the Ark before the player.
+- The return route depicts a facility in shutdown after the planetary AI withdraws.
+- Existing return-route enemies become unstable without introducing a fourth generation.
 - The planetary AI traces Ion’s repeated returns to the Ark.
 - The true final confrontation occurs at the Ark.
-- The planetary AI appears in blade-form wielded by another Irys.
+- The final confrontation occurs in the Ark’s main pod chamber.
+- The planetary AI appears in blade-form wielded by fixed Anti-Irys.
+- The Ark protects dormant candidates through scripted arena transformations.
+- The player is never assigned a pod-defense objective.
+- The planetary-AI blade rises from Anti-Irys after her defeat.
+- Irys prevents the planetary-AI blade from escaping.
+- Ion destroys the exposed planetary AI directly.
 - Irys is revealed as the Ark intelligence.
 - Irys and Ion merge after victory.
 - The merged consciousness divides across the dormant bodies.
