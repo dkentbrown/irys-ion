@@ -1,297 +1,499 @@
 # Irys+Ion — Vision
 
-**Version:** 1.0  
+**Version:** 2.0  
 **Status:** Approved  
-**Last Updated:** 2026-07-13  
+**Last Updated:** 2026-07-15  
 **Owner:** Creative Direction
 
 ---
 
 # Purpose
 
-This document describes the intended player experience of **Irys+Ion**.
+This document describes the intended game and player experience of Irys+Ion.
 
-The Design Philosophy establishes the immutable principles of the project. This document answers a different question:
+Design Philosophy establishes the governing principles.
 
-> **What game are we building?**
+This document answers:
 
-It communicates the creative destination of the project without prescribing implementation details. Mechanics, systems, and technical decisions belong in later specifications.
+> What game are we building, and what should it feel like to play?
+
+Detailed mechanics belong to their owning specifications.
 
 ---
 
 # Elevator Pitch
 
-**Irys+Ion** is a fast-paced cyberpunk roguelite action platformer where an agile android and an ancient sentient energy sword become increasingly synchronized through expressive movement-based combat.
+Irys+Ion is a fast 2D cyberpunk roguelite action platformer in which the player controls Ion, a persistent sentient sword intelligence, through a compact directional combat Language.
 
-Players race through procedurally assembled futuristic environments, solving dangerous encounters through a directional sword language built around movement, positioning, precision, and momentum.
+Before each run, the player selects one of three generated synthetic Irys bodies.
 
-As mastery grows, players slowly discover that the true protagonist is not the android they believed they controlled, but the ancient intelligence within the sword itself.
+That body’s anatomy, durability, movement, traits, and Technique expression define the run.
+
+The player then fights through a fixed five-boss planetary megastructure, optionally replacing the damaged body with planetary-AI-produced substrates after the first three bosses.
+
+Combat and movement are one positional system.
+
+Normal Techniques flow and redirect immediately.
+
+Primed Techniques commit.
+
+Repeated runs do not grant permanent power.
+
+The player advances by learning The Language, learning the bosses, evaluating bodies, and becoming visibly more fluent.
 
 ---
 
 # The Experience
 
-At first glance, the game appears familiar.
+At first, the player consciously chooses every movement and Technique.
 
-A lone android traverses a futuristic city while battling hostile machines with an elegant energy blade.
+Combat feels dangerous because every input changes position.
 
-Within minutes, however, the player realizes the game rewards something fundamentally different.
+A poorly chosen action may leave the player on the wrong side of an enemy, trapped against terrain, or committed at the wrong moment.
 
-Combat is not about defeating enemies as quickly as possible.
+With practice, the player stops treating movement and attack as separate decisions.
 
-It is about preserving flow.
+Advance becomes a route through danger.
 
-Movement and swordplay become inseparable.
+Ascend becomes vertical control.
 
-Every slash changes position.
+Descend becomes a decisive downward resolution.
 
-Every jump creates opportunity.
+Prime becomes deliberate emphasis.
 
-Every enemy asks a different question.
+Eventually the player reads an encounter as a sequence of positional intentions.
 
-Every successful encounter becomes a continuous route through space rather than a sequence of isolated attacks.
-
-Over time the player's relationship with the controls changes.
-
-Initially every movement is deliberate and conscious.
-
-Eventually the player stops thinking about inputs altogether.
-
-The sword language becomes instinctive.
-
-The game begins to feel less like controlling a character and more like performing choreography.
+The resulting movement should look elegant, fast, and almost rehearsed despite being performed in real time.
 
 ---
 
-# The Hidden Story
+# The Player
 
-The player believes they are controlling **Irys**, an android warrior.
+The player is Ion.
 
-The truth is that they are **Ion**.
+Ion persists across every run.
 
-Ion is an ancient sentient weapon that has survived countless hosts across centuries of conflict.
+When the current Irys body is defeated, Ion rises from the body and returns to the Ark.
 
-Irys is its current partner.
+The player then selects another generated substrate and begins again.
 
-The game never lies to the player.
+The changing body affects the run.
 
-Instead, it allows the player to form a reasonable assumption before gradually revealing a deeper truth.
+The player’s identity and learned fluency remain continuous.
 
-When the reveal arrives, players should immediately reinterpret every previous death, upgrade, save, memory fragment, and conversation from a completely different perspective.
+---
 
-The reveal should feel inevitable rather than surprising.
+# Irys
+
+Irys is the intelligence operating the Ark.
+
+The Ark creates the physical synthetic bodies capable of wielding Ion.
+
+The player may initially understand the selected body as the individual named Irys.
+
+Over time, the game reveals that:
+
+- the body is a generated substrate;
+- Irys is the Ark intelligence;
+- Ion is the persistent player identity;
+- the relationship continues across changing bodies and repeated attempts.
+
+The current substrate is not a conventional companion with persistent personal continuity.
+
+The emotional relationship belongs to Irys and Ion as the two persistent intelligences.
+
+---
+
+# The Run
+
+Every attempt begins in the Ark candidate chamber.
+
+Three generated Irys candidates are visible in pods.
+
+The player may inspect:
+
+- appearance;
+- anatomy;
+- traits;
+- exact statistics;
+- maximum structural integrity;
+- current structural integrity;
+- major strengths;
+- major disadvantages.
+
+The player chooses one body.
+
+The remaining candidates return to dormancy.
+
+The selected body and Ion travel through the concealed teleport link to the fixed megastructure ingress.
+
+Every run then follows the same campaign structure:
+
+1. First outward stage and boss.
+2. First post-boss substrate decision.
+3. Second outward stage and boss.
+4. Second post-boss substrate decision.
+5. Third outward stage and boss.
+6. Third post-boss substrate decision.
+7. Control-center stage and command mech.
+8. Anti-Irys activation.
+9. Shutdown return to the teleporter.
+10. Final Anti-Irys duel at the Ark.
+
+No boss is permanently skipped.
+
+No alternate route replaces mastery of the fixed campaign.
 
 ---
 
 # Core Experience Pillars
 
-## Expressive Movement
+## The Language
 
-Movement is the primary form of player expression.
+The combat vocabulary is intentionally small:
 
-Running, jumping, dashing, wall interaction, teleportation, and sword techniques merge into one continuous flow.
+- Advance;
+- Ascend;
+- Descend;
+- Prime.
 
-Watching an expert player should immediately communicate years of mastery.
+Depth comes from timing, context, enemy behavior, terrain, redirection, commitment, and body variation.
 
----
+The player becomes fluent rather than acquiring a large move list.
 
-## Directional Sword Language
+## Expressive Positioning
 
-The sword is not simply a weapon.
+Every Technique moves Irys through the arena.
 
-It is a language.
+Every movement decision affects combat.
 
-Each directional input expresses a different combat intention.
+The player should feel that they are drawing a route through threats rather than alternating between navigation and attack modes.
 
-Enemies are defeated by understanding this language rather than simply producing more damage.
+## Responsive Normals
 
-The player gradually becomes fluent.
+Normal Techniques answer immediately.
 
----
+They can be chained and redirected throughout execution.
 
-## Meaningful Encounters
+A new intention takes authority from the current position.
 
-Enemy density is intentionally low.
+## Deliberate Prime
 
-Every encounter should feel authored, memorable, and mechanically distinct.
+Prime arms the next Technique’s committed expression.
 
-Even ordinary enemies deserve the player's attention.
+Primed Techniques are not simply stronger attacks.
 
-Encounters are solved rather than cleared.
+They are weightier decisions that surrender short-term flexibility.
 
----
+## Generated Bodies
 
-## Elegant Speed
+Each run body changes the expression of the same complete Language.
 
-The game should become increasingly fast without becoming visually chaotic.
+Bodies may be:
 
-A perfect encounter resembles a rehearsed performance.
+- weak;
+- strong;
+- defective;
+- specialized;
+- durable;
+- fragile;
+- aesthetically ordinary;
+- visually striking;
+- mechanically exceptional.
 
-Visual effects exist to improve clarity, timing, and impact—not obscure them.
+Every body remains viable.
 
----
+## Meaningful Attrition
 
-## Synchronization
+Structural integrity persists throughout the run.
 
-The relationship between Irys and Ion defines both the emotional and mechanical arc of the game.
+Boss victories do not erase earlier damage.
 
-As synchronization grows, the player should feel the partnership becoming increasingly natural.
+Post-boss frame decisions compare:
 
-The greatest reward is not greater power.
+- current build quality;
+- remaining health;
+- available replacement quality;
+- preferred play style;
+- risk of continuing.
 
-It is greater fluency.
+## Fixed Mastery Campaign
+
+The same bosses appear every run.
+
+Repeated play creates familiarity, confidence, routing knowledge, and increasingly deliberate execution.
+
+Variation does not replace mastery.
+
+It gives mastery new conditions.
+
+## Low-Density Threat
+
+Ordinary enemies appear in small numbers.
+
+They are readable, dangerous, and mechanically purposeful.
+
+They are not disposable crowds.
+
+## Boss-Centered Structure
+
+Bosses occupy most of the active combat time.
+
+Each boss advances the planetary AI’s attempt to understand and answer Irys and Ion.
+
+The final opponent uses the same Language.
 
 ---
 
 # Emotional Progression
 
-The intended emotional progression is:
+The intended player progression is:
 
-Curiosity
+Curiosity  
+↓  
+Experimentation  
+↓  
+Recognition  
+↓  
+Competence  
+↓  
+Confidence  
+↓  
+Fluency  
+↓  
+Mastery  
+↓  
+Revelation  
+↓  
+Urgency  
+↓  
+Resolution
 
-↓
+The player should repeatedly recognize that something once overwhelming has become readable.
 
-Experimentation
-
-↓
-
-Competence
-
-↓
-
-Confidence
-
-↓
-
-Flow
-
-↓
-
-Mastery
-
-↓
-
-Revelation
-
-↓
-
-Perfection
-
-Players should repeatedly experience moments where they realize they have become capable of something that previously appeared impossible.
+The final confrontation should feel both mechanically earned and narratively inevitable.
 
 ---
 
-# The Player Journey
+# Boss Progression
 
-A first-time player should:
+The five fixed bosses express the planetary AI’s increasing understanding.
 
-- struggle with movement;
-- gradually understand the directional sword language;
-- recognize enemy weaknesses;
-- discover satisfying movement chains;
-- overcome increasingly demanding encounters;
-- improve naturally across repeated runs;
-- eventually experience uninterrupted flow;
-- uncover the true relationship between Irys and Ion;
-- realize that mastery—not statistics—is the primary progression system.
+## Boss 1
+
+A crude non-Irys guardian teaching basic directional reading.
+
+## Boss 2
+
+A more articulated and adaptive machine testing redirection and chaining.
+
+## Boss 3
+
+A large restrained proto-Irys testing vertical control, limb interaction, commitment, and interruption.
+
+## Boss 4
+
+A refined knight-like bipedal command mech in the active control center.
+
+Its defeat appears to be the campaign’s conclusion.
+
+## Boss 5
+
+Anti-Irys at the Ark.
+
+Anti-Irys is a fixed polished ideal substrate wielding the planetary AI in blade form.
+
+The duel tests complete fluency in The Language.
+
+---
+
+# Final Act
+
+After the command mech falls, the player enters an adjoining containment chamber.
+
+Anti-Irys is present but inactive.
+
+The planetary AI drains its ultraviolet and chartreuse presence from the control center, concentrates through Anti-Irys’s support systems, and manifests as her blade.
+
+The planetary AI reveals that Ion’s successful intrusion has freed it from its previous confinement.
+
+It also reveals that repeated observation of Ion’s returns has exposed the Ark.
+
+Anti-Irys travels toward the Ark.
+
+The player returns through the facility as it shuts down around them.
+
+Existing enemies become less coordinated and more unstable.
+
+The final duel occurs in the Ark’s main pod chamber.
+
+The Ark protects the dormant candidates through scripted barriers, shutters, and pod movement without creating a defense objective.
+
+After Anti-Irys falls, the planetary-AI blade attempts to escape.
+
+Irys prevents it.
+
+Ion kills it.
+
+---
+
+# Ending
+
+The final battle critically compromises the Ark.
+
+Irys and Ion merge.
+
+The merged consciousness divides across the created Irys bodies.
+
+Those bodies awaken as independent individuals.
+
+An early unselected candidate opens her pod, providing a direct visual payoff to the repeated selection loop.
+
+The story ends with:
+
+- the planetary AI destroyed;
+- the Ark’s disposable-substrate cycle ended;
+- the created bodies becoming people;
+- the central conflict resolved.
 
 ---
 
 # World
 
-The world is a luminous cyberpunk future slowly collapsing beneath forgotten wars and autonomous machines.
+The game depicts two primary locations.
 
-Players travel through rooftops, elevated transit systems, industrial districts, arcologies, and hidden infrastructure beneath the city.
+## The Ark
 
-The environments are expansive enough to support expressive movement but are always designed to prioritize gameplay readability.
+A concealed creation facility physically separate from the megastructure.
 
-The city is not merely a setting.
+It is:
 
-It is a stage.
+- the run hub;
+- the candidate-selection location;
+- Ion’s return destination;
+- Irys’s physical expression;
+- the location of the final duel;
+- the site of the ending.
+
+## The Planetary Megastructure
+
+A fixed linear route through a structure of planetary scale.
+
+Early regions feel ancient, dark, dormant, and incomprehensibly vast.
+
+Later regions reveal active maintenance, adaptation, fabrication, and continuous self-manufacture.
+
+The control center is immaculate and fully operational.
+
+After the planetary AI departs, the return route feels like movement through a machine whose coordinating intelligence has left.
 
 ---
 
 # Visual Identity
 
-The visual style combines:
+The game combines:
 
-- pixel art;
-- bright neon color palettes;
-- layered parallax backgrounds;
-- dramatic lighting;
+- pixel-art presentation;
+- modular rigged Irys construction;
+- dark industrial mass;
+- vivid saturated cyberpunk light;
 - strong silhouettes;
-- energetic particle effects;
-- high gameplay readability.
+- synthetic adult female character design;
+- fixed iconic blade designs;
+- wide readable combat framing;
+- restrained but intense effects.
 
-Every screenshot should immediately communicate speed, elegance, and deliberate motion.
+Irys should be visually distinctive and cosplayable.
+
+Ion should remain recognizable across every body and run.
+
+Anti-Irys should be a fixed polished counterfeit ideal.
+
+The contrast between industrial darkness and vivid synthetic color is a core part of the game’s identity.
 
 ---
 
 # Audio Identity
 
-Music evolves alongside player performance.
+The primary score is industrial electronic.
 
-Increasing synchronization may introduce additional musical layers naturally.
+Music follows the megastructure’s progression from dormant scale to active precision.
 
-Combat sounds reinforce timing, impact, and directional intent.
+A recurring melodic hook appears throughout the game.
 
-Ion should possess a distinct sonic identity.
+The final Anti-Irys fight transforms that hook into a dramatic orchestral treatment.
 
-Silence should be used deliberately before moments of extreme intensity.
+Dialogue appears as text accompanied by modulated electrical tones rather than conventional voice acting.
+
+Ion, Irys, and the planetary AI each possess recognizable sonic identities.
 
 ---
 
 # What Players Should Remember
 
-Years after finishing **Irys+Ion**, players should remember experiences rather than mechanics.
+Players should remember:
 
-They should remember:
-
-- realizing how dramatically they had improved;
-- defeating a biome boss without losing momentum;
-- finally understanding the sword language;
-- discovering that they had always been Ion;
-- instantly recognizing enemy weaknesses;
-- feeling movement and combat become inseparable;
-- finally overcoming the adaptive final boss.
-
-The game should be remembered for how it felt.
+- selecting a strange or exceptional Irys body;
+- discovering how differently the same Language feels through another frame;
+- retaining a powerful damaged body instead of accepting a healthier weaker one;
+- learning a boss that initially seemed impossible;
+- redirecting a Normal Technique at the exact right moment;
+- committing to a Primed Technique and accepting its consequence;
+- moving through an encounter as one continuous route;
+- recognizing that the player has always been Ion;
+- discovering that Irys is the Ark;
+- seeing the planetary AI manifest as Anti-Irys’s blade;
+- racing back through the dying facility;
+- fighting Anti-Irys among the dormant pods;
+- watching Irys prevent the blade’s escape;
+- seeing an early unselected candidate awaken;
+- realizing how dramatically their own fluency improved.
 
 ---
 
 # Intended Audience
 
-The game is designed for players who enjoy mastery-oriented action games.
+The game is designed for players who enjoy:
 
-It rewards observation, experimentation, adaptation, precision, and repeated practice.
+- mastery-oriented action;
+- repeated boss learning;
+- expressive movement;
+- demanding but readable combat;
+- high skill ceilings;
+- meaningful run variation;
+- systems that reward observation and adaptation.
 
-It intentionally avoids relying on excessive statistics, inventory management, or content volume as primary progression systems.
-
-Depth should emerge from mastery rather than accumulation.
+It does not rely on inventory volume, grinding, permanent progression, or procedural content quantity as its primary source of depth.
 
 ---
 
 # Definition of Success
 
-The project succeeds when players begin describing their experience using words such as:
+The Vision succeeds when players describe the game using words such as:
 
 - flow;
+- precision;
 - rhythm;
 - elegance;
 - choreography;
+- commitment;
 - adaptation;
 - mastery.
 
-Success is hearing statements such as:
+Success is hearing:
 
-> "Everything finally clicked."
+> Everything finally clicked.
 
-> "I couldn't move like that when I started."
+> I could not move like that when I started.
 
-> "That boss stopped feeling unfair once I understood it."
+> That body completely changed how I approached the run.
 
-> "The reveal completely changed how I thought about the game."
+> I kept the damaged frame because the build was too good to abandon.
 
-> "It looked like a dance."
+> The boss stopped feeling unfair when I understood what it was asking.
 
-If expert gameplay appears effortless while remaining mechanically demanding, then **Irys+Ion** has achieved its vision.
+> The final fight used everything the game had taught me.
+
+> The reveal changed how I understood every previous run.
+
+If expert play appears effortless while remaining mechanically demanding, Irys+Ion has achieved its vision.

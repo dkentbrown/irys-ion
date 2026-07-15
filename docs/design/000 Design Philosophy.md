@@ -1,399 +1,594 @@
 # Irys+Ion — Design Philosophy
 
-**Version:** 1.0  
+**Version:** 2.0  
 **Status:** Approved  
-**Last Updated:** 2026-07-13  
-**Owner:** Creative Direction  
-
-## Purpose
-
-This document defines the governing design principles of **Irys+Ion**. It is the highest-level source of truth for the project.
-
-When a later mechanic, system, narrative idea, visual choice, or technical shortcut conflicts with this document, this document takes precedence. Revisions must be made explicitly rather than bypassed through exceptions elsewhere.
+**Last Updated:** 2026-07-15  
+**Owner:** Creative Direction
 
 ---
 
-## North Star
+# Purpose
 
-> **A player who starts out clumsy and, after dozens of hours, moves through the world with such precision and confidence that it looks almost choreographed.**
+This document defines the governing principles of Irys+Ion.
 
-The game must transform the player from someone who survives encounters into someone who appears to dance through them.
+It is the highest-level design standard for evaluating mechanics, narrative choices, presentation, scope, and implementation compromises.
 
-Mastery should not merely increase damage output. It should visibly change how the player moves, routes through space, reads threats, and links decisions together. An expert run should look intuitive, deliberate, extremely fast, and elegant rather than chaotic.
+Detailed behavior belongs to the owning specifications.
 
----
+This document must remain consistent with those specifications.
 
-## Core Player Fantasy
-
-The player appears to control **Irys**, an agile female android wielding an energy sword named **Ion**.
-
-The hidden truth is that the player is **Ion**.
-
-Ion is an ancient sentient weapon and combat intelligence. Irys is its current host and partner. The player’s directional attack inputs represent Ion issuing combat intent through the sword while Irys executes that intent through movement.
-
-The relationship between them is not simple possession. Irys retains identity, personality, and agency. Progression represents growing synchronization between host and weapon.
-
-The player should initially assume that Irys is the protagonist. The truth that the player has always inhabited Ion’s perspective should emerge gradually and reframe earlier events without invalidating them.
+When an apparent conflict is found, the project must reconcile the documents explicitly rather than silently implementing one version.
 
 ---
 
-## Game Identity
+# North Star
 
-**Irys+Ion** is a fast, two-dimensional, side-scrolling cyberpunk action platformer with roguelite structure, procedural room assembly, parallax environments, pixel-art presentation, and native desktop performance.
+> A player who begins clumsy should eventually move through combat with such precision, confidence, and speed that unscripted play resembles choreography.
 
-Its defining feature is not procedural generation, character statistics, enemy quantity, or spectacle.
+Mastery must be visible.
 
-Its defining feature is a directional sword language in which:
+A skilled player should not merely deal more damage.
 
-- movement is combat;
-- combat is movement;
-- positioning determines attack choice;
-- attack choice changes positioning;
-- enemies are solved through execution rather than worn down through repetition;
-- mastery produces uninterrupted flow.
+A skilled player should:
 
-The roguelite structure exists to create varied circumstances in which the player repeatedly practices and expresses this combat language.
+- make faster decisions;
+- choose better routes;
+- redirect Techniques with intention;
+- understand enemy commitments;
+- control position;
+- preserve opportunities;
+- turn dangerous encounters into elegant motion.
 
----
-
-## Combat Manifesto
-
-1. **Movement is combat.**
-2. **Combat is movement.**
-3. **Every sword input must have positional meaning.**
-4. **Every enemy must create a readable movement and attack problem.**
-5. **Momentum should be preserved unless the player makes a meaningful mistake.**
-6. **Precision is rewarded more than raw speed, but mastery naturally creates speed.**
-7. **The ground is where beginners recover; the air is where experts increasingly operate.**
-8. **Execution should be generous enough to feel intuitive. Difficulty should come primarily from rapid judgment, positioning, timing, and adaptation.**
-9. **A perfect encounter should resemble choreography rather than survival.**
-10. **The greatest players should appear effortless.**
-11. **Synchronization between Irys and Ion should be expressed through play, animation, audio, and visual feedback—not merely through numerical bonuses.**
-12. **Encounters are solved, not endured.**
+Expert play should appear deliberate and fluid rather than frantic or visually chaotic.
 
 ---
 
-## Sword Language
+# Core Player Fantasy
 
-The sword is not a conventional weapon with interchangeable light and heavy attacks. It is a compact language of directional combat verbs.
+The player is Ion.
 
-The foundational input model is:
+Ion is a persistent sentient blade intelligence.
 
-- **WASD:** conventional movement;
-- **horizontal combat input matching Irys' current facing direction:** Advance;
-- **up attack:** upward technique;
-- **down attack:** downward technique;
-- **opposite horizontal combat input:** Prime, which arms the alternate expression of the next technique.
+Ion does not act independently as a conventional humanoid character. It requires a physical wielder.
 
-Advance and Prime are relative to facing rather than absolute left or right.
+Irys is the intelligence operating the Ark.
 
-If Irys is stationary, her current facing determines which horizontal combat input represents Advance.
+The Ark creates synthetic adult female bodies capable of wielding Ion.
 
-Each direction must have a distinct purpose beyond damage.
+Each run begins with Ion selecting and entering one generated Irys substrate.
 
-The intended functional identities are:
+The physical body changes.
 
-- **Forward:** advance, cut through space, and continue a route;
-- **Up:** launch, intercept, reflect, or gain elevation;
-- **Down:** descend, rebound, break downward defenses, or convert height into force;
-- **Reverse:** alter the sword’s state and empower or transform the next committed action.
+Ion persists.
 
-The detailed rules belong in the Combat Language Specification. Later design must preserve these distinct identities.
+Irys persists as the Ark intelligence.
 
----
+The player may initially interpret the selected body as the complete person named Irys. The narrative gradually reveals the distinction between:
 
-## Momentum and Synchronization
+- Irys, the Ark intelligence;
+- the generated physical Irys substrates;
+- Ion, the persistent blade intelligence controlled by the player.
 
-Momentum is both physical and systemic.
-
-The player should be rewarded for:
-
-- maintaining purposeful movement;
-- selecting the correct technique;
-- landing attacks cleanly;
-- reflecting or redirecting threats;
-- avoiding damage through positioning;
-- chaining actions without hesitation;
-- using the environment;
-- remaining airborne when tactically appropriate;
-- adapting rather than repeating a solved pattern mechanically.
-
-A visible gauge may represent **Synchronization** rather than generic momentum.
-
-Synchronization measures the quality of cooperation between Irys and Ion. High synchronization should amplify expression of mastery through tighter animation, richer sword trails, intensified music layers, smoother transitions, stronger audiovisual clarity, and carefully bounded mechanical benefits.
-
-It must not become a substitute for skill, an automatic victory state, or a system that encourages mindless aggression. It should reward already-correct play and make excellent execution feel increasingly fluid.
+The persistent relationship is between Irys and Ion, not between Ion and one disposable run body.
 
 ---
 
-## Encounter Philosophy
+# Game Identity
+
+Irys+Ion is a fast two-dimensional side-scrolling cyberpunk roguelite action platformer.
+
+Its defining features are:
+
+- a compact directional combat Language;
+- combat and movement functioning as one positional system;
+- a fixed boss-focused campaign;
+- substantial run variation through generated Irys bodies;
+- player mastery as the primary long-term progression;
+- pixel-art presentation combining industrial darkness with vivid synthetic color.
+
+The game is not built around content volume.
+
+It is built around depth, fluency, boss learning, generated-body adaptation, and repeated expression of the same coherent combat grammar.
+
+---
+
+# Combat Manifesto
+
+1. Movement is combat.
+2. Combat is traversal under pressure.
+3. Every Technique must have positional meaning.
+4. The Language Always Answers.
+5. Player intention is always respected.
+6. Commitment is also an expression of intention.
+7. Normal Techniques are fluid and immediately redirectable.
+8. Primed Techniques are deliberate and committed.
+9. Difficulty comes from judgment, timing, positioning, adaptation, and execution.
+10. Enemy behavior must be readable.
+11. Successful contact must be clear without interrupting the player’s intended choreography.
+12. Player mastery is more important than statistical power.
+13. An expert encounter should look composed rather than chaotic.
+14. The game should reward fluency without requiring a combo meter, style score, or synchronization gauge.
+15. Encounters are solved through understanding and execution rather than endured through attrition alone.
+
+---
+
+# The Language
+
+The Language is a compact vocabulary of directional combat intentions:
+
+- Advance;
+- Ascend;
+- Descend;
+- Prime.
+
+Advance, Ascend, and Descend are Techniques.
+
+Prime arms the alternate committed expression of the next Technique.
+
+Prime is not:
+
+- a damage buff;
+- a mana resource;
+- a cooldown;
+- a super meter;
+- a conventional charge attack.
+
+Every generated Irys body must be able to express the complete Language.
+
+Body variation may change how a Technique performs.
+
+It must not change whether the Technique answers.
+
+The detailed grammar belongs to the Combat Language Specification.
+
+The detailed physical response belongs to the Player Feel Specification.
+
+---
+
+# Player Intention and Commitment
+
+Responsiveness does not mean every action can be escaped without consequence.
+
+Normal Techniques represent flexible intention.
+
+The player may replace one Normal Technique with another immediately.
+
+Primed Techniques represent deliberate commitment.
+
+Once begun, they normally retain authority through their authored completion and recovery.
+
+Both responsiveness and commitment serve player agency because both are consequences of an intentional choice.
+
+Do not add hidden queues, automatic substitutions, animation locks, or exception systems that cause the game to answer a different intention from the one the player expressed.
+
+---
+
+# Movement Philosophy
+
+Ordinary movement positions the player.
+
+The Language transforms that position into combat.
+
+The project does not require separate foundational systems for:
+
+- dash;
+- teleport;
+- wall traversal;
+- grappling;
+- air dashes;
+- movement-resource meters.
+
+Additional movement mechanics should be rejected unless their absence prevents The Language from functioning.
+
+Technique movement must remain:
+
+- immediate;
+- readable;
+- dependable;
+- coherent at high speed.
+
+Solid terrain remains authoritative.
+
+Enemy bodies block ordinary movement but do not normally stop an active Technique.
+
+---
+
+# Encounter Philosophy
 
 Enemy density is intentionally low.
 
-A typical biome should contain:
+Ordinary encounters typically contain one to three enemies.
 
-- a small number of standard sentinels;
-- one or two elite or mini-boss encounters;
-- one biome guardian;
-- eventual access to the final apex boss.
+Enemies are real threats rather than disposable fodder.
 
-Even the least powerful enemy should require recognition and an appropriate response. Standard enemies are not disposable crowds. They are compact movement puzzles that teach, reinforce, combine, or test parts of the sword language.
+Every enemy should test one or more parts of:
 
-Enemy categories are conceptually:
+- directional recognition;
+- spacing;
+- commitment;
+- redirection;
+- vertical control;
+- interruption;
+- arena use.
 
-- **Sentinels:** focused tests of one or two combat principles;
-- **Elites:** multi-pattern encounters requiring several reads and responses;
-- **Guardians:** biome bosses that examine a broader set of movement and combat skills;
-- **Apex:** the final boss, which tests adaptation, composure, execution, and mastery of the complete language.
+The game uses three conceptual enemy lineages that develop visibly across the campaign:
 
-Enemy durability must not be used to disguise a lack of behavioral depth. Fewer enemies should permit stronger silhouettes, clearer telegraphs, more intentional counters, and more memorable encounters.
+- Striker;
+- Pursuer;
+- Anchor.
 
----
+Later generations become more refined and capable without becoming fully Irys-like.
 
-## Boss Philosophy
+Clearly feminine or complete Irys-like construction is reserved for the proto-Irys boss and Anti-Irys.
 
-Boss fights are the clearest expression of the game.
-
-A representative mastery clip should show the player:
-
-- dashing and teleporting around a biome boss;
-- reflecting attacks;
-- landing the correct directional techniques;
-- preserving momentum;
-- adapting to changing patterns;
-- moving at extreme speed without becoming visually chaotic;
-- producing a fight that looks rehearsed despite being actively read and executed.
-
-Bosses should test skill domains rather than merely escalating health and damage. Each major boss should have a distinct combat philosophy, arena logic, and lesson.
-
-The final boss must be extraordinarily difficult but legitimately beatable without requiring a narrowly prescribed perk build. It should adapt during the fight, punish predictable habits, and force the player to vary timing, routes, techniques, and defensive responses.
-
-Its difficulty must come from mastery demands rather than hidden rules, unavoidable damage, arbitrary statistical checks, or dependence on a lucky run.
+Ordinary enemies do not require separate elite, modifier, rarity, or procedural mutation systems.
 
 ---
 
-## Movement Philosophy
+# Boss Philosophy
 
-Movement must feel fast, expressive, and dependable.
+Bosses are the clearest expression of the game.
 
-The player should be able to combine running, jumping, wall interaction, dashing, attacking, rebounding, and teleporting into continuous routes. Most attacks should impart, preserve, redirect, or exploit motion.
+They should occupy most of the campaign’s active combat time.
 
-The game should avoid unnecessary forced stops. Dialogue, rewards, pickups, doors, transitions, and presentation should preserve flow where practical. Pauses are acceptable when they create intentional contrast, communicate meaningful information, or frame a major event, but not as routine friction.
+The same five bosses appear every run.
 
-The player must feel that failure came from an understandable decision or execution error, not from inconsistent controls.
+Bosses use fixed authored health, attacks, phases, and arena logic.
 
----
+They do not scale statistically to the current Irys body.
 
-## Difficulty Philosophy
+Every generated Irys remains capable of defeating every boss with sufficient skill.
 
-The control language should be intuitive enough that a new player can accidentally discover something impressive.
+Bosses should:
 
-The mastery ceiling should remain high enough that an expert can perform routes that initially appear impossible.
+- remain vulnerable during most of the encounter;
+- use clear telegraphs;
+- obey authored interruption rules;
+- avoid hidden stagger systems;
+- avoid add-wave dependence;
+- test increasing fluency in The Language.
 
-Difficulty should prioritize:
+The final Anti-Irys duel is not an unrelated combat system.
 
-- reading;
-- decision speed;
-- positioning;
-- attack selection;
-- timing;
-- route planning;
-- adaptation;
-- composure under pressure.
-
-Difficulty should not primarily rely on:
-
-- obscure input combinations;
-- extremely narrow input windows;
-- unreadable effects;
-- excessive enemy volume;
-- inflated health;
-- mandatory grinding;
-- one dominant build;
-- random outcomes that override skill.
-
-The game may be punishing, but it must be coherent.
+It is the complete opposing expression of the same Language.
 
 ---
 
-## Roguelite Philosophy
+# Roguelite Philosophy
 
-Runs provide changing conditions, not changing identity.
+The generated Irys body is the complete roguelite progression layer.
 
-Run-based upgrades may alter qualities such as:
+Before every run, the Ark generates three candidates.
 
-- sword length;
-- attack speed;
-- charge behavior;
-- jump height;
-- additional jumps;
-- movement speed;
-- dash behavior;
-- teleport range or rules;
-- reflection properties;
-- synchronization behavior.
+The player selects one.
 
-Upgrades should encourage different routes through the same combat language. They should not replace that language with unrelated subgames or passive damage systems.
+Bodies vary substantially in:
 
-A weak run should remain recoverable through skill. A powerful run should expand expression rather than trivialize the need for correct play.
+- anatomy;
+- appearance;
+- movement;
+- durability;
+- reach;
+- Technique geometry;
+- Prime behavior;
+- hit recovery;
+- displacement resistance;
+- other surfaced properties.
 
-The game should support repeated play through procedural assembly, perk variation, increasing mastery, boss learning, unlocks, and discovery. Infinite playability is an aspiration created through systemic depth and recombination, not a promise of literally infinite authored content.
+Candidate quality is intentionally unequal.
 
----
+A strong body does not require a compensating weakness.
 
-## Procedural World Philosophy
+A defective body may simply create a harder run.
 
-Procedural generation should assemble authored room modules rather than generate unrestricted geometry.
+Every body remains viable.
 
-Rooms must be designed around:
+The full generation pool is available from the first attempt.
 
-- readable traversal;
-- intentional attack routes;
-- valid enemy counterplay;
-- parallax presentation;
-- movement continuity;
-- predictable collision;
-- multiple skill-dependent approaches where practical.
+The project does not use:
 
-Randomization must not produce impossible layouts, unclear threats, broken boss approaches, or rooms that undermine the combat language.
+- permanent stat upgrades;
+- card drafts;
+- currencies;
+- equipment inventories;
+- loot tiers;
+- talent trees;
+- unlockable body parts;
+- permanent boss skips;
+- alternate starting floors;
+- consumable healing stockpiles;
+- a separate perk layer.
 
-The city and exterior environments should feel broad, vertical, luminous, and open enough to support high-speed traversal. The world may include rooftops, streets, transit systems, industrial zones, arcologies, and other futuristic spaces, but biome identity must serve gameplay readability first.
-
----
-
-## Character Philosophy
-
-### Irys
-
-Irys should be visually distinctive, convention-ready, and aspirational without being designed primarily as fan service.
-
-Her design should support the fantasy that a player might realistically want to cosplay as her. This requires a strong silhouette, recognizable clothing or armor structure, deliberate color blocking, functional movement design, and one or two iconic visual elements.
-
-She should not feel like an empty vessel. Her growing trust in Ion and her increasing synchronization with it form the emotional center of the game.
-
-### Ion
-
-Ion is the true player character.
-
-It should feel ancient, analytical, capable, and restrained. It is not a chatty companion and should not behave like a generic sarcastic AI. Its identity should emerge through combat records, system language, fragmented memory, selective communication, and its history with prior hosts.
-
-Ion’s voice and behavior should leave room for ambiguity concerning its motives, past, and understanding of partnership.
+Player knowledge and skill are the persistent progression.
 
 ---
 
-## Narrative Philosophy
+# Attrition and Frame Replacement
 
-Narrative should be sparse, discoverable, and mechanically integrated.
+Structural integrity persists through the complete run.
 
-The central reveal—that the player is Ion rather than Irys—must be foreshadowed fairly but not announced early. Possible clues include:
+Boss victory does not automatically restore the current body.
 
-- save and system language centered on Ion;
-- NPCs addressing the weapon;
-- post-death framing that lingers on the surviving sword;
-- memory fragments from different hosts and eras;
-- an enemy or final boss recognizing Ion independently of Irys.
+After Bosses 1–3, Ion may inspect two or three viable planetary-AI-produced Irys substrates.
 
-Death and repeated runs should have narrative coherence. Ion survives hosts, retains fragments, and continues. The game should treat this implication seriously without reducing Irys to a disposable body.
+The player may:
 
-Story delivery must not routinely interrupt movement or over-explain the premise. The player should be able to understand the immediate objective while deeper meaning accumulates through play.
+- retain the current damaged body;
+- transfer into an available body.
 
----
+Each option has its own:
 
-## Presentation Philosophy
+- anatomy;
+- build;
+- traits;
+- maximum structural integrity;
+- remaining structural integrity;
+- visual appearance.
 
-The visual target is bright cyberpunk pixel art over darker, highly layered environments.
+Transfer replaces the complete physical substrate.
 
-Presentation priorities are:
+No body-specific state carries over.
 
-1. combat readability;
-2. player silhouette;
-3. directional attack clarity;
-4. enemy telegraph clarity;
-5. sense of speed;
-6. elegance of motion;
-7. spectacle.
+Later selections trend upward only probabilistically.
 
-Parallax backgrounds, neon lighting, rain, particles, bloom-like effects, sword trails, hit stop, camera response, and screen effects should create intensity without obscuring decisions.
-
-Effects must communicate timing and state. They are gameplay feedback, not decoration alone.
-
-The player should remain visually legible at maximum intended speed.
+The frame decision must remain a genuine comparison between build quality, suitability, and immediate survivability.
 
 ---
 
-## Scope Philosophy
+# Campaign Philosophy
 
-The project is a one-prompt, no-intervention implementation experiment using Codex Sol.
+Every run follows one fixed linear five-boss campaign.
 
-Scope must therefore favor a complete, cohesive game over a broad but unfinished one.
+The campaign is:
 
-The design should prefer:
+- Ark;
+- first outward stage and boss;
+- second outward stage and boss;
+- third outward stage and boss;
+- control-center command mech;
+- shutdown return;
+- final Anti-Irys duel at the Ark.
 
-- few deep mechanics over many shallow mechanics;
-- few distinct enemies over large rosters;
-- modular authored rooms over unrestricted generation;
-- strong bosses over excessive biomes;
-- procedural or internally generated assets where appropriate;
-- simple, explicit architecture;
-- dependable behavior over fragile complexity.
+There are no permanent skips, branching stage routes, alternate boss orders, or procedural room chains.
 
-Features should be rejected unless they strengthen mastery of the sword language.
+Connective stages are short and low-density.
 
-The project does not need crafting, inventory micromanagement, dialogue trees, weapon durability, sprawling RPG statistics, multiple unrelated weapons, or other systems that dilute the central experience.
+The fixed structure exists so repeated runs deepen:
+
+- boss knowledge;
+- route fluency;
+- generated-body adaptation;
+- mastery of The Language.
+
+Variation comes from body generation and player decisions rather than structural randomness.
 
 ---
 
-## Explicit Non-Goals
+# World Philosophy
 
-**Irys+Ion is not:**
+The game has two primary locations:
+
+1. The Ark.
+2. The planetary AI’s megastructure.
+
+The Ark is concealed and physically separate from the megastructure.
+
+The megastructure begins ancient, dormant, and incomprehensibly vast.
+
+It becomes increasingly active, maintained, adaptive, and visibly self-manufacturing as the campaign advances.
+
+The broader planet is not an explorable open world.
+
+Its complete history and the megastructure’s original construction do not require explanation.
+
+Worldbuilding should support the playable route rather than expand into an encyclopedia.
+
+---
+
+# Character Philosophy
+
+## Irys
+
+Irys is the Ark intelligence.
+
+Her personality is expressed primarily through:
+
+- Ark behavior;
+- lighting;
+- pods;
+- barriers;
+- machinery;
+- dialogue;
+- protective environmental action.
+
+A simple emblem may identify Irys in interfaces and dialogue.
+
+She does not require a stable humanoid hologram.
+
+## Irys Substrates
+
+Physical Irys bodies are visibly manufactured synthetic adult female constructs.
+
+They should be:
+
+- attractive;
+- expressive;
+- varied;
+- recognizable;
+- mechanically legible;
+- cosplayable.
+
+Some individual bodies may include tasteful fan service.
+
+Not every body should be equally glamorous.
+
+Generated anatomy must visibly correspond to gameplay properties.
+
+## Ion
+
+Ion is the persistent player identity and strongest recurring visual icon.
+
+Its blade design does not change between bodies or runs.
+
+Ion should feel:
+
+- refined;
+- focused;
+- intelligent;
+- restrained;
+- nonhuman.
+
+## Anti-Irys
+
+Anti-Irys has one fixed iconic body design.
+
+She is the planetary AI’s polished conception of an ideal Irys substrate.
+
+She is not generated from the current player body.
+
+The planetary AI itself persists as Anti-Irys’s blade.
+
+---
+
+# Narrative Philosophy
+
+The narrative is self-contained.
+
+It should contain a small number of meaningful revelations rather than extensive lore.
+
+The central revelations are:
+
+- the player is Ion;
+- Irys is the Ark intelligence rather than one disposable body;
+- the planetary AI has learned from Ion’s repeated incursions;
+- the planetary AI creates Anti-Irys and assumes a blade role analogous to Ion;
+- repeated teleport returns expose the Ark;
+- the final victory requires Irys and Ion acting together;
+- the created bodies become independent individuals at the ending.
+
+Story delivery should remain sparse and mechanically integrated.
+
+Dialogue uses text boxes with modulated electrical tones.
+
+Narrative should not routinely interrupt movement.
+
+The game ends conclusively without requiring a sequel hook.
+
+---
+
+# Presentation Philosophy
+
+The visual identity depends on contrast between:
+
+- dark industrial restraint;
+- bright saturated cyberpunk color.
+
+Pixel art is the presentation language.
+
+Modular rigged construction makes generated bodies feasible.
+
+Combat readability takes priority over ornamental detail.
+
+Gameplay framing favors a wider view.
+
+Every boss encounter uses one fixed authored zoom.
+
+The ordinary HUD remains visible at all times.
+
+Successful Normal Technique contact does not stop, pause, slow, or recoil Irys.
+
+Impact is communicated primarily through enemy response, effects, sound, and screen presentation.
+
+The score is primarily industrial electronic.
+
+The final Anti-Irys fight transforms the recurring melodic hook into a dramatic orchestral treatment.
+
+---
+
+# Scope Philosophy
+
+The project is intended for a one-shot implementation by GPT-5.6 Sol.
+
+Scope must favor a complete, cohesive game over a broad unfinished one.
+
+Prefer:
+
+- four combat words over a large move list;
+- three enemy lineages over a large roster;
+- five strong bosses over numerous shallow encounters;
+- one fixed campaign over procedural stages;
+- one complete body-generation system over several progression layers;
+- data-driven bounded variation over unrestricted simulation;
+- explicit architecture over abstraction for its own sake;
+- dependable behavior over fragile spectacle.
+
+A feature should be removed when it increases implementation risk without materially improving the game’s central experience.
+
+---
+
+# Explicit Non-Goals
+
+Irys+Ion is not:
 
 - a horde-survival game;
 - a conventional beat-’em-up;
 - a loot treadmill;
 - a stat-first action RPG;
-- a bullet-hell game defined by visual chaos;
+- a card-drafting roguelite;
+- a procedurally assembled stage crawler;
+- an open-world city game;
+- a bullet-hell defined by visual chaos;
+- a game built around permanent upgrades;
+- a game built around a synchronization meter;
+- a combo-score game;
 - a cinematic platformer with frequent loss of control;
-- a story game with combat attached;
-- a game where the optimal strategy is repeated attack spam;
-- a game where procedural generation excuses weak level design;
-- a game where power progression replaces player learning.
+- a game where ordinary attacks stop against enemy bodies;
+- a game where power progression replaces player learning;
+- a game with numerous unrelated movement abilities;
+- a game requiring extensive lore to understand its objective.
 
 ---
 
-## Decision Test
+# Decision Test
 
 Every proposed feature must answer:
 
-> **Does this make mastering Ion’s sword language more interesting, expressive, readable, or rewarding?**
+> Does this make mastering The Language more interesting, expressive, readable, or rewarding?
+
+When multiple valid options remain, prefer the option that:
+
+1. better supports the North Star;
+2. preserves player intention;
+3. improves combat readability;
+4. strengthens positional decision-making;
+5. deepens mastery;
+6. integrates with existing systems;
+7. requires fewer exceptions;
+8. creates less implementation risk;
+9. moves the project toward a testable product.
 
 A feature that does not pass this test should normally be removed.
 
-When two valid options remain, prefer the one that:
-
-1. better supports the North Star;
-2. preserves movement;
-3. improves player agency;
-4. is clearer at high speed;
-5. creates greater mastery depth;
-6. requires less implementation risk;
-7. introduces fewer exceptions.
-
 ---
 
-## Definition of Success
+# Definition of Success
 
 The game succeeds when:
 
-- a new player can move, attack, and discover satisfying interactions quickly;
-- early failure feels instructive rather than arbitrary;
-- repeated play produces visible improvement independent of upgrades;
-- enemy weaknesses make positioning and technique selection meaningful;
-- bosses reward adaptation and composure;
-- a skilled player can sustain elegant, high-speed movement through combat;
-- expert footage looks choreographed without being scripted;
-- the title and narrative reveal gain meaning when the player understands that they are Ion;
+- a new player can discover satisfying movement quickly;
+- early failure feels understandable;
+- repeated play produces visible improvement independent of permanent upgrades;
+- generated bodies create meaningful adaptation without invalidating The Language;
+- post-boss frame decisions create real build-versus-survivability choices;
+- ordinary enemies remain threatening and readable;
+- bosses reward learning and composure;
+- a skilled player sustains elegant high-speed movement;
+- expert footage resembles choreography without being scripted;
+- the fixed campaign remains compelling across repeated attempts;
+- the narrative revelations reframe the run structure;
+- the final Anti-Irys duel feels like the culmination of the same combat grammar;
 - the finished implementation feels like one deliberate game rather than a collection of generated features.
 
-The final measure is simple:
+The final measure is:
 
-> **The player should eventually stop looking like they are controlling Irys and start looking like Irys and Ion are thinking together.**
+> The player should eventually stop thinking in buttons and begin thinking directly in The Language.
