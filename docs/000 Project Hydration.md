@@ -372,10 +372,10 @@ Approved:
 - Narrative Specification
 - Art Direction
 - Audio Direction
+- Technical Specification
 
 Not yet complete:
 
-- Technical Specification
 - Sol Implementation Specification
 
 ---
@@ -438,6 +438,49 @@ After Bosses 1–3, Ion may retain the current damaged body or transfer into an 
 Each offered body retains its own current structural integrity.
 
 No conventional metaprogression system exists.
+
+## Technical Implementation
+
+The implementation uses C++20, Raylib, and CMake.
+
+The first verified target is macOS while preserving portability to Windows and Linux.
+
+The first Sol pass must implement the full game rather than a vertical slice.
+
+Gameplay simulation runs at fixed 60 Hz.
+
+Stages use authored room sequences.
+
+There are no active-run saves.
+
+The project uses one local profile containing settings, aggregate statistics, and five recent runs.
+
+Initial controls are keyboard-only.
+
+Frequently tuned values live in external JSON behind a validated configuration layer.
+
+The architecture uses explicit gameplay types rather than ECS.
+
+Developer mode is required.
+
+The body-generation system uses deterministic constrained generation across four authored anatomy configurations:
+
+- Standard;
+- SingleArm;
+- SingleLeg;
+- AdditionalArm.
+
+Generated combat variation includes critical-hit chance and critical-hit multiplier.
+
+Damage resistance and enemy-authored knockback are universal across frames.
+
+Hit recovery may vary by frame.
+
+There are no post-hit or Technique invulnerability frames.
+
+Enemies and bosses may use contextual weighted attack selection while attacks remain authored and fixed after selection.
+
+The game ships one canonical hard-to-very-hard difficulty.
 
 ## Campaign
 
@@ -532,31 +575,11 @@ Do not infer these systems from old terminology, notebook material, commit histo
 
 The immediate active section is:
 
-`docs/technical/010 Technical Specification.md`
+`docs/999 Sol Implementation Specification.md`
 
-The Technical Specification must define the smallest feasible C++ and Raylib architecture capable of implementing the approved game without introducing new creative systems.
+The next work is:
 
-It must translate the approved design into explicit engineering decisions covering at minimum:
-
-- application and game-state architecture;
-- fixed and variable update responsibilities;
-- input handling and combat authority;
-- collision and hit registration;
-- generated Irys body data;
-- modular Irys rendering;
-- enemy and boss state machines;
-- campaign and run-state flow;
-- post-boss frame replacement;
-- save and settings behavior;
-- asset and data organization;
-- audio layering;
-- deterministic content definitions;
-- debugging and tuning support;
-- build and verification requirements.
-
-After Technical Specification is approved:
-
-1. assemble `docs/999 Sol Implementation Specification.md`;
+1. assemble the complete Sol implementation specification;
 2. perform a final cross-document contradiction audit;
 3. begin the one-shot Sol implementation experiment.
 

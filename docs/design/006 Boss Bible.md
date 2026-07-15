@@ -44,6 +44,20 @@ Bosses should not rely primarily on:
 - randomized phase order;
 - mandatory body configurations.
 
+Bosses may use contextual weighted random attack selection, especially across phases.
+
+Valid attacks may depend on phase, distance, elevation, arena state, cooldowns, and recent choices.
+
+Use anti-repeat weighting.
+
+Attacks cannot be changed after their telegraph begins.
+
+Attack timing and mechanics do not mutate randomly.
+
+The game uses one canonical difficulty tuned hard to very hard.
+
+No public boss-practice mode is required.
+
 Every viable generated Irys must be capable of defeating every boss.
 
 A stronger Irys may complete a fight faster or survive more mistakes.
@@ -187,6 +201,18 @@ Large bosses may remain physically stationary while still providing unmistakable
 Normal Technique contact does not pause, slow, or interrupt Irys.
 
 Primed Technique contact may use short, fixed, learnable impact responses.
+
+Every boss may use multiple authored hurtboxes where its shape requires.
+
+All hurtboxes feed one persistent boss health pool.
+
+Boss 3’s limbs may be independently targetable while sharing that health pool.
+
+Each boss attack activation may damage Irys once unless explicitly authored as multi-hit.
+
+Bosses do not have passive touch damage unless a region is explicitly authored as dangerous.
+
+Bosses may be critically hit.
 
 ## Adds
 
@@ -624,7 +650,6 @@ No boss may require:
 - a specific Advance distance;
 - a specific Prime hold duration;
 - a specific damage threshold;
-- a specific displacement resistance value;
 - an exceptional aesthetic or rarity state.
 
 Arena geometry and attack timing should be validated against low-performing but viable bodies.

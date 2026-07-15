@@ -73,6 +73,8 @@ The up arrow speaks Ascend.
 
 The down arrow speaks Descend.
 
+Combat words trigger on fresh presses rather than key hold or key repeat.
+
 Horizontal combat inputs are relative to facing rather than permanently bound to Advance or Prime.
 
 If Irys is stationary, the current stored facing determines the relationship.
@@ -241,6 +243,7 @@ After Prime is spoken:
 
 - Ion enters the armed Prime state;
 - ordinary movement remains available;
+- an active Normal Technique continues uninterrupted;
 - the next Advance, Ascend, or Descend becomes Primed;
 - the armed state is consumed when that Technique begins.
 
@@ -262,7 +265,7 @@ Prime changes the grammar of the next word from fluid expression to committed ex
 
 Prime remains armed until one of the following occurs:
 
-1. The next Technique consumes it.
+1. The next valid Technique consumes it.
 2. An enemy interruption clears it.
 3. The hold duration expires.
 4. Another explicitly authored state clears transient combat state.
@@ -270,6 +273,14 @@ Prime remains armed until one of the following occurs:
 Ordinary movement does not consume Prime.
 
 Prime may remain armed while the player repositions.
+
+Prime may be armed during an active Normal Technique.
+
+Arming Prime does not interrupt that Normal Technique.
+
+Once Prime is armed, additional Prime presses do nothing.
+
+Repeated Prime presses do not refresh, extend, stack, or replace the original timer.
 
 The base target is a brief tunable hold long enough to permit intentional repositioning, approximately one to two seconds unless playtesting establishes a better value.
 
@@ -433,6 +444,8 @@ Prime is not buffered Technique input.
 
 It is a visible armed state.
 
+Prime input during a Primed Technique, hit reaction, or other authored lockout is ignored and not buffered.
+
 ---
 
 # Interruption
@@ -507,7 +520,6 @@ Generated body properties may alter:
 - strike force;
 - exit velocity;
 - ordinary movement;
-- displacement resistance;
 - hit recovery;
 - Prime hold duration.
 

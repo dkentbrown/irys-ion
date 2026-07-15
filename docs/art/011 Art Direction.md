@@ -133,8 +133,9 @@ Visual variation must support:
 - stature;
 - mass;
 - limb length;
-- missing limbs;
-- additional limbs;
+- SingleArm configuration;
+- SingleLeg configuration;
+- AdditionalArm configuration;
 - asymmetry;
 - altered balance;
 - altered reach;
@@ -142,6 +143,31 @@ Visual variation must support:
 - other approved anatomy traits.
 
 Every generated body must remain visually coherent and capable of expressing The Language.
+
+Body anatomy uses four authored configurations:
+
+- Standard;
+- SingleArm;
+- SingleLeg;
+- AdditionalArm.
+
+Reduced-limb bodies are intentional Ark specializations.
+
+Sealed sockets, rerouted light, purpose-built suit panels, adjusted balance, and dedicated poses must make this intentional.
+
+SingleLeg is a wheel-foot monopod with a small rear thruster used for acceleration, braking, jumping, stabilization, and Technique support.
+
+It does not continuously hover.
+
+AdditionalArm has one third arm attached at a shoulder.
+
+Any valid arm may wield Ion.
+
+AdditionalArm may automatically pass Ion between arms during authored animation.
+
+There is no dual wielding or additional Technique vocabulary.
+
+Body variations must remain visually complete, attractive, synthetic, and cosplayable.
 
 ## Modular Gameplay Rig
 
@@ -169,6 +195,12 @@ The rig controls placement and movement.
 Authored poses, alternate sprites, deformation, and effects preserve strong pixel silhouettes.
 
 Generated body dimensions may alter the rig and part placement, but must not create malformed or unreadable results.
+
+All four configurations require distinct ordinary locomotion families.
+
+Support left- and right-handed Ion poses.
+
+Use three bounded gameplay collision profiles while allowing broader visual variation.
 
 ## Inspection Presentation
 
@@ -397,6 +429,8 @@ Required visual traits:
 The current Irys body adapts its grip, stance, posture, and attachment points around Ion.
 
 Ion’s identity does not change to match the generated body.
+
+The visible sword trail must closely match the authored damaging sweep.
 
 Prime completes, extends, or resolves part of Ion’s physical silhouette rather than merely making the existing blade brighter.
 

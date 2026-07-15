@@ -22,6 +22,18 @@ Ordinary movement applies only while no Technique or authored reaction has autho
 
 When a Technique input and ordinary movement would otherwise take effect at the same time, the Technique takes precedence.
 
+When ordinary movement has authority, A and D change Irys’s facing immediately, including while airborne.
+
+Advance captures facing at activation.
+
+Ordinary movement input during a Technique does not steer, bend, reverse, or redirect that Technique.
+
+Ordinary jumping may use short tunable coyote time, ordinary-jump buffering, and variable jump height.
+
+Ordinary-jump buffering is not Technique buffering.
+
+The base movement model does not include double jump, wall jump, dash, or teleport.
+
 ## Input Retention
 
 There is no general Technique input queue or buffer.
@@ -136,7 +148,13 @@ Speaking Prime arms the next Technique.
 
 Ordinary movement does not consume or cancel the armed Prime state. The player may reposition before activating the Primed Technique.
 
+Prime may be armed during an active Normal Technique.
+
+Arming Prime does not interrupt that Normal Technique.
+
 Prime remains armed until it is consumed by the next Technique, cleared by enemy interruption, or its defined hold duration expires.
+
+Prime provides no invulnerability.
 
 The armed state must be communicated through a persistent world-space cue rather than depending on the HUD.
 
@@ -165,6 +183,8 @@ Ordinary movement resumes only when no Technique or authored reaction has author
 Normal Technique damage is contact-driven.
 
 A valid hit occurs when the active Technique first makes eligible contact with an enemy.
+
+Player attack collision uses authored swept Ion volumes aligned with the visible sword trail.
 
 A successful Normal Technique hit does not interrupt, pause, slow, recoil, or otherwise alter Irys’s movement, timing, or control.
 
@@ -219,6 +239,14 @@ That extension must remain short and tightly bounded. It should add weight witho
 A valid enemy hit interrupts and displaces Irys during a Normal Technique unless that Technique explicitly avoids, deflects, or withstands the attack.
 
 The interrupted Normal Technique ends without completing any unfinished movement or attack.
+
+Each enemy or boss attack activation may damage Irys once unless that attack is explicitly authored as multi-hit.
+
+Lingering overlap from the same attack activation cannot repeatedly damage Irys.
+
+Enemy-authored knockback is the same for all generated frames.
+
+Hit-reaction lockout may vary by frame.
 
 Enemy interruption clears:
 
@@ -304,11 +332,23 @@ Primed interruption resistance prevents ordinary hits from cancelling the Techni
 
 Any Technique-specific defensive property must be explicit rather than implied by Technique activation.
 
+There is no universal post-hit invulnerability.
+
+There is no Technique or Prime invulnerability.
+
 ## Enemy Body Collision
 
 Enemy bodies block Irys during ordinary movement.
 
+Ordinary movement uses firm kinematic body blocking against enemies.
+
+Neither Irys nor the enemy passively pushes the other through overlap.
+
+Passive enemy-body contact is harmless.
+
 Enemy bodies do not physically obstruct Irys while a Normal or Primed Technique has authority.
+
+Active Techniques ignore ordinary enemy blocking.
 
 During a Technique, Irys follows the Technique’s authored path through enemies rather than stopping against their collision bodies.
 

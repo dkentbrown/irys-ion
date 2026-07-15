@@ -24,6 +24,8 @@ They remain substantially below boss tier in durability, complexity, and encount
 
 Ordinary enemies are authored mechanical problems.
 
+Ordinary enemies use authored state machines.
+
 Their attacks must remain:
 
 - readable;
@@ -51,6 +53,12 @@ Enemy difficulty should not come primarily from:
 - large waves;
 - dynamic scaling to the selected Irys;
 - unavoidable damage.
+
+Ordinary passive body contact is harmless.
+
+Enemy bodies use firm ordinary-movement blocking.
+
+Each enemy attack activation may hit Irys once unless explicitly authored as multi-hit.
 
 ## Enemy Density
 
@@ -544,6 +552,29 @@ Enemy behavior must not dynamically scale to remove those differences.
 ## Implementation Model
 
 The implementation should favor reusable components across each lineage.
+
+Attack selection may use contextual weighted randomness.
+
+Valid attack pools may depend on:
+
+- position;
+- elevation;
+- cooldown;
+- encounter state;
+- recent attacks.
+
+Anti-repeat weighting should prevent monotonous repetition.
+
+Once selected, attacks retain fixed:
+
+- telegraph;
+- timing;
+- movement;
+- hitboxes;
+- damage;
+- recovery.
+
+Do not use untelegraphed random timing mutation.
 
 Useful shared components may include:
 

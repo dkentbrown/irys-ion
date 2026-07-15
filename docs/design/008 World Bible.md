@@ -130,6 +130,47 @@ The megastructure becomes increasingly refined, adaptive, and Irys-like as the p
 
 This environmental progression parallels the boss progression.
 
+## Rooms, Terrain, and Camera
+
+Each outward biome is implemented as a short linear sequence of authored rooms.
+
+Rooms may define:
+
+- terrain;
+- hazards;
+- enemies;
+- camera regions;
+- music;
+- lighting;
+- transitions.
+
+Ordinary progression is effectively one-way.
+
+Cleared rooms do not repopulate.
+
+Do not implement farming or general backtracking.
+
+Boss arenas are dedicated rooms.
+
+Safe transition rooms may host dialogue.
+
+The shutdown return reuses selected authored rooms with alternate:
+
+- routes;
+- lighting;
+- music;
+- enemy states.
+
+Ordinary rooms use smooth camera follow with authored subregion locks.
+
+Boss arenas remain fully visible at one fixed zoom throughout the fight.
+
+Gameplay terrain collision is axis-aligned even when art suggests irregular machinery.
+
+One-way platforms and authored moving platforms are permitted.
+
+Slopes and general physics terrain are not required.
+
 ## Stage One: Industrial Perimeter
 
 The first stage begins at the concealed ingress relay.

@@ -71,8 +71,9 @@ Created bodies vary substantially in anatomy, proportions, physical capability, 
 
 Possible variations include defects or anomalies such as:
 
-- missing limbs;
-- additional limbs;
+- SingleArm specialization;
+- SingleLeg specialization;
+- AdditionalArm specialization;
 - unusual proportions;
 - asymmetry;
 - altered mass;
@@ -141,6 +142,12 @@ Different speakers may use distinct:
 Dialogue should remain concise.
 
 The electrical signal communicates voice and presence without conventional spoken performance.
+
+Dialogue never occurs during active combat.
+
+Dialogue is restricted to Ark, selection states, safe transitions, aftermath scenes, the control-center reveal, and ending states.
+
+No dialogue overlay is required during live encounters.
 
 ## Dialogue Across Runs
 

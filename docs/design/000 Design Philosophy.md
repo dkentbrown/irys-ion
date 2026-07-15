@@ -272,7 +272,7 @@ Bodies vary substantially in:
 - Technique geometry;
 - Prime behavior;
 - hit recovery;
-- displacement resistance;
+- critical-hit profile;
 - other surfaced properties.
 
 Candidate quality is intentionally unequal.

@@ -77,13 +77,18 @@ Its generated properties affect:
 - ordinary movement;
 - structural integrity;
 - reach;
-- displacement resistance;
 - hit recovery;
 - Technique distance;
 - Technique speed required to preserve duration;
 - strike force;
+- critical-hit chance;
+- critical-hit multiplier;
 - Prime hold duration;
 - other approved body-dependent properties.
+
+Incoming damage resistance is identical across all frames.
+
+Enemy-authored knockback is identical across all frames.
 
 The body may change during the run.
 
@@ -215,7 +220,7 @@ Ordinary movement:
 - does not override an active Technique;
 - does not steer a Technique;
 - does not consume Prime;
-- remains subject to enemy body collision;
+- uses firm body blocking against enemies;
 - remains subject to solid terrain and gravity.
 
 The base conceptual model does not require separate foundational states for dash, teleport, or wall interaction.
@@ -279,13 +284,15 @@ Inputs entered while control is unavailable do not automatically execute later.
 
 Technique damage is driven by eligible contact.
 
+Player Technique damage uses authored swept Ion weapon volumes rather than sprite transparency.
+
 A Technique activation may hit a target once unless explicitly authored as multi-hit.
 
-Enemy contact does not normally obstruct Technique movement.
+Passive enemy-body contact is harmless.
 
-Enemy bodies block ordinary movement.
+Enemy bodies block ordinary movement through firm kinematic body collision.
 
-Technique paths pass through enemies according to the Player Feel Specification.
+Techniques ignore ordinary enemy-body blocking and pass through enemies according to the Player Feel Specification.
 
 Successful Normal Technique contact does not:
 
@@ -328,6 +335,14 @@ Interruptibility must remain explicit and readable.
 
 The project does not require a hidden universal stagger hierarchy.
 
+There are no universal post-hit invulnerability frames.
+
+Techniques and Prime grant no inherent invulnerability.
+
+Each enemy or boss attack activation may hit Irys once unless explicitly authored as multi-hit.
+
+Lingering overlap from the same attack activation cannot repeatedly damage Irys.
+
 ---
 
 # Terrain Model
@@ -347,6 +362,12 @@ The arena must remain dependable enough that the player can plan routes at high 
 # Enemy Model
 
 Enemies are authored state machines with readable behavior.
+
+Enemies may use contextual weighted attack selection.
+
+Validity and weighting may depend on position, elevation, cooldowns, encounter state, and recent attack history.
+
+Once an attack is selected, its telegraph, timing, movement, hitboxes, damage, and recovery remain authored and fixed.
 
 The three conceptual lineages are:
 
@@ -385,6 +406,10 @@ Each boss uses:
 - clear telegraphs;
 - contextual interruption rules;
 - one persistent health bar.
+
+Bosses may use contextual weighted attack selection, especially across phases.
+
+The selected attack remains fixed after its telegraph begins.
 
 Bosses do not statistically scale to the current Irys body.
 
@@ -495,11 +520,14 @@ A body may change:
 - air control;
 - reach;
 - durability;
-- displacement resistance;
 - recovery;
 - Technique distance;
 - strike force;
+- critical-hit chance;
+- critical-hit multiplier;
 - Prime hold duration.
+
+Damage resistance and enemy-authored knockback do not vary by body.
 
 A body may not remove:
 

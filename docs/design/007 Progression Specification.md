@@ -103,7 +103,9 @@ At least one material difference should exist across the offered candidates in a
 - durability;
 - Technique geometry;
 - Prime behavior;
-- displacement resistance;
+- hit recovery;
+- critical-hit profile;
+- dominant side;
 - play-style suitability.
 
 The diversity check does not equalize power.
@@ -181,14 +183,15 @@ The system should generate combinations rather than select from a small pool of 
 
 The body’s visible anatomy should correspond to its mechanical properties.
 
-Statistics should be causally related where practical rather than independently randomized without consequence.
+Statistics should be constrained by the visible structural build rather than rolled independently without consequence.
 
 Examples:
 
-- greater mass may reduce acceleration while increasing displacement resistance;
+- greater mass may reduce acceleration while increasing maximum structural integrity;
 - longer limbs may increase reach while affecting balance;
-- a missing leg may reduce ordinary movement performance while leaving The Language functional;
-- an additional arm may alter reach, stability, or strike force;
+- a SingleLeg wheel-foot monopod may reduce ordinary movement flexibility while leaving The Language functional;
+- an AdditionalArm body may alter reach, stability, or strike force;
+- precision construction may improve critical-hit chance or multiplier;
 - unstable joints may improve flexibility while worsening recovery or control;
 - a reinforced torso may improve integrity without requiring an unrelated drawback.
 
@@ -198,42 +201,84 @@ The generation system should remain data-driven and bounded.
 
 ## Surfaced Irys Properties
 
-Each candidate should expose approximately twenty gameplay-relevant properties.
+Each candidate should expose the following generated gameplay properties:
 
-The initial property set is:
+- maximum structural integrity;
+- ground speed;
+- acceleration;
+- jump power;
+- air control;
+- hit recovery;
+- physical reach;
+- strike force;
+- critical-hit chance;
+- critical-hit multiplier;
+- Advance distance;
+- Ascend height;
+- Descend drive;
+- Prime hold duration.
 
-### Anatomy and Form
+Universal across all frames:
 
-1. Stature
-2. Mass
-3. Arm configuration
-4. Leg configuration
-5. Limb length and reach
-6. Symmetry
-7. Center of mass and balance
-8. Joint stability
-
-### General Performance
-
-9. Maximum structural integrity
-10. Ground speed
-11. Ground acceleration
-12. Jump power
-13. Air control
-14. Displacement resistance
-15. Hit-reaction recovery
-16. Strike force
-
-### Technique Expression
-
-17. Advance distance
-18. Ascend height
-19. Descend drive
-20. Prime hold duration
+- damage resistance;
+- enemy-authored knockback;
+- gravity and base falling behavior;
+- Normal Technique duration;
+- Language vocabulary;
+- core interruption rules;
+- terrain collision rules;
+- hit eligibility rules.
 
 These properties are implementation targets rather than immutable labels.
 
 A property may be renamed, merged, or derived if implementation reveals redundancy, provided the generation system still creates substantial visible and mechanical variation.
+
+## Authored Anatomy Configurations
+
+The first implementation uses exactly four authored body configurations:
+
+1. Standard
+2. SingleArm
+3. SingleLeg
+4. AdditionalArm
+
+Reduced-limb configurations are intentional Ark specializations rather than failed assembly.
+
+Every configuration must remain complete, viable, and capable of expressing the full Language.
+
+SingleArm uses purpose-built sealed anatomy and may retain either arm.
+
+Any valid arm may wield Ion.
+
+SingleLeg is a purpose-built wheel-foot monopod with a small rear stabilization and thrust unit.
+
+The wheel-foot and thruster support locomotion, braking, jumping, stabilization, and Technique presentation without providing continuous hovering.
+
+AdditionalArm uses one third arm attached at a shoulder.
+
+Any of its valid arms may wield Ion.
+
+The AdditionalArm configuration may automatically transfer Ion between arms during authored motion.
+
+This transfer creates no new inputs, dual wielding, extra Technique vocabulary, or additional hit events.
+
+Every generated body also has a dominant side or handedness.
+
+Dominant side may influence small surfaced differences in handling, strike expression, recovery, or control while preserving viability.
+
+## Collision Profiles
+
+Generated frames use three bounded gameplay collision profiles:
+
+- small;
+- standard;
+- large.
+
+The profile is derived from coherent body construction.
+
+Visual anatomy may vary more broadly than the gameplay hurtbox.
+
+Do not generate arbitrary per-body collision meshes.
 
 ## Named Traits
 
@@ -241,8 +286,9 @@ Discrete anatomical or structural conditions should appear as named traits.
 
 Examples include:
 
-- Missing Leg
-- Additional Arm
+- SingleArm
+- SingleLeg Wheel-Foot
+- AdditionalArm
 - Elongated Reach
 - Reinforced Torso
 - Unstable Joints
@@ -279,11 +325,16 @@ Body variation may affect:
 - required travel speed;
 - attack reach;
 - strike force;
+- critical-hit chance;
+- critical-hit multiplier;
 - exit velocity;
 - ordinary movement;
-- displacement resistance;
 - hit recovery;
 - Prime hold duration.
+
+Hit-reaction recovery varies according to coherent body construction.
+
+Damage resistance and enemy-authored knockback are universal across all generated frames.
 
 A weak or defective body may perform a Technique poorly.
 
@@ -439,9 +490,15 @@ The implemented progression system must include:
 - no unlimited rerolling;
 - no playable audition before selection;
 - minimum meaningful diversity among the three candidates;
-- approximately twenty surfaced body properties;
+- the surfaced generated gameplay properties defined in this specification;
 - both continuous statistics and discrete traits;
 - visible anatomical variation;
+- exactly four authored anatomy configurations;
+- Standard, SingleArm, SingleLeg, and AdditionalArm support;
+- dominant side or handedness;
+- critical-hit chance and critical-hit multiplier;
+- three bounded collision profiles;
+- universal damage resistance and enemy-authored knockback;
 - unequal candidate power;
 - weighted rarity;
 - the full generation pool from the first run;
