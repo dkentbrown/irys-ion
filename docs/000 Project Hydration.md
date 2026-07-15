@@ -370,9 +370,6 @@ Approved:
 - Progression Specification
 - World Bible
 - Narrative Specification
-
-Draft but substantially established:
-
 - Art Direction
 - Audio Direction
 
@@ -533,21 +530,35 @@ Do not infer these systems from old terminology, notebook material, commit histo
 
 # Current Work
 
-The immediate active section remains:
+The immediate active section is:
 
-`docs/audio/012 Audio Direction.md`
+`docs/technical/010 Technical Specification.md`
 
-The next unresolved audio decision is:
+The Technical Specification must define the smallest feasible C++ and Raylib architecture capable of implementing the approved game without introducing new creative systems.
 
-Should Ion and Irys have clearly different voice signatures from the beginning, or should their tones share an obvious underlying sonic relationship that foreshadows their eventual merger?
+It must translate the approved design into explicit engineering decisions covering at minimum:
 
-After Audio Direction is complete:
+- application and game-state architecture;
+- fixed and variable update responsibilities;
+- input handling and combat authority;
+- collision and hit registration;
+- generated Irys body data;
+- modular Irys rendering;
+- enemy and boss state machines;
+- campaign and run-state flow;
+- post-boss frame replacement;
+- save and settings behavior;
+- asset and data organization;
+- audio layering;
+- deterministic content definitions;
+- debugging and tuning support;
+- build and verification requirements.
 
-1. close remaining Art Direction gaps;
-2. approve Art Direction and Audio Direction;
-3. define `docs/technical/010 Technical Specification.md`;
-4. assemble `docs/999 Sol Implementation Specification.md`;
-5. begin the one-shot implementation experiment.
+After Technical Specification is approved:
+
+1. assemble `docs/999 Sol Implementation Specification.md`;
+2. perform a final cross-document contradiction audit;
+3. begin the one-shot Sol implementation experiment.
 
 Do not expand the documentation beyond what is necessary to reach that implementation.
 

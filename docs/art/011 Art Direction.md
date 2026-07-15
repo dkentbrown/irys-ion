@@ -1,6 +1,6 @@
 # Art Direction
 
-Status: Draft
+Status: Approved
 
 ## Purpose
 
