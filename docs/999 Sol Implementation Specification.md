@@ -1,6 +1,6 @@
 # Irys+Ion — Sol Implementation Specification
 
-**Version:** 1.0
+**Version:** 1.1
 **Status:** Approved
 **Last Updated:** 2026-07-16
 **Owner:** Implementation Direction
@@ -777,7 +777,19 @@ Sol must:
 
 Do not commit unless the user’s implementation prompt explicitly requests one.
 
----
+## One-Shot Implementation Branch
+
+For the one-shot implementation, Sol must:
+
+- begin from a clean, current local `main` matching `origin/main`;
+- create and work exclusively on `sol/one-shot-implementation`;
+- leave `main` unmodified after creating the implementation branch;
+- commit the completed implementation and all appropriate generated assets to that branch;
+- use meaningful commit messages without AI or co-author attribution;
+- push the branch to `origin` and establish its upstream;
+- never force-push;
+- not merge the implementation branch into `main`;
+- report the final branch name, commit hash or hashes, push result, and git status.
 
 # Final Delivery Report
 
