@@ -55,6 +55,7 @@ if(BUILD_TESTING AND IRYSION_BUILD_TESTS)
   add_executable(irys-ion-tests tests/core_tests.cpp)
   target_link_libraries(irys-ion-tests PRIVATE irys_ion_core)
   add_test(NAME deterministic-core COMMAND irys-ion-tests)
+  add_test(NAME complete-campaign-validation COMMAND irys-ion --validate-campaign)
   set_tests_properties(deterministic-core PROPERTIES
     ENVIRONMENT "IRYSION_SOURCE_DIR=${CMAKE_CURRENT_SOURCE_DIR}")
 endif()

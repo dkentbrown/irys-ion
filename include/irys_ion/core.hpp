@@ -132,6 +132,7 @@ public:
     bool speak(Technique technique, const Frame& frame);
     void tick(float dt);
     void interrupt(float recovery);
+    void terrainContact();
     bool canHit(std::uint64_t targetId, bool overlapping);
     void separated(std::uint64_t targetId);
     float damageFor(Technique technique, const Frame& frame, bool primed, Rng& rng, bool& critical) const;

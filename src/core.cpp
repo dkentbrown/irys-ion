@@ -277,6 +277,12 @@ void CombatModel::interrupt(float recovery) {
     state_.authority = Authority::HitReaction; state_.technique = Technique::None; state_.techniquePrimed = false;
     state_.primeArmed = false; state_.primeRemaining = 0.0f; state_.actionRemaining = std::max(0.05f, recovery); state_.hitTargets.clear();
 }
+void CombatModel::terrainContact() {
+    if (state_.authority == Authority::NormalTechnique) {
+        state_.authority = Authority::Ordinary; state_.technique = Technique::None; state_.techniquePrimed = false;
+        state_.actionRemaining = 0.0f; state_.hitTargets.clear();
+    }
+}
 bool CombatModel::canHit(std::uint64_t targetId, bool overlapping) {
     if (state_.authority != Authority::NormalTechnique && state_.authority != Authority::PrimedTechnique) return false;
     if (!overlapping) { state_.overlappingTargets.erase(targetId); return false; }
