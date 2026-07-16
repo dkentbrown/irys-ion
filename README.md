@@ -6,6 +6,12 @@ room, pixel-stable rendering, tuning reload, diagnostics, and deterministic test
 It intentionally contains no combat, enemies, progression, narrative, audio, or
 additional rooms.
 
+The visual foundation uses a restrained cool-grey metal test chamber, orange-lit
+traversal edges, and electric-blue identity lighting on white-haired synthetic
+Irys and the Ion blade she visibly carries. The three images under
+`references/player-foundation/` are committed art-direction references only and
+are never loaded by the executable.
+
 ## Build
 
 Raylib 6.0 is expected at `/opt/homebrew/opt/raylib`.
@@ -76,10 +82,11 @@ build-player-foundation/irys_ion_foundation.app/Contents/MacOS/irys_ion_foundati
 ```
 
 This writes 640x360 PNGs for idle, running, braking, turning, rising, apex,
-falling, landing, wide-room framing, vertical-camera framing, and the diagnostic
-overlay. These captures are validation artifacts and are not tracked.
+falling, landing, the orange-lit platform treatment, wide-room framing,
+vertical-camera framing, and the diagnostic overlay. These captures are
+validation artifacts and are not tracked.
 
 The committed `tools/generate_foundation_assets.py` regenerates the Irys atlas,
-foreground collision skins, and industrial material atlas using only the Python
-standard library. It preserves an existing curated room background. Python is
-not used by configuration, compilation, testing, or play.
+grey metallic room layers, collision-aligned platform skins, and industrial
+material atlas using only the Python standard library. Python is not used by
+configuration, compilation, testing, or play.

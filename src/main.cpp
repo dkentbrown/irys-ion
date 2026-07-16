@@ -243,18 +243,19 @@ struct CaptureCase {
 
 bool captureValidationSet(RenderTexture2D canvas, const RenderContext& context,
                           const std::filesystem::path& directory) {
-    const std::array<CaptureCase, 11> cases{{
+    const std::array<CaptureCase, 12> cases{{
         {"01_idle.png", LocomotionState::Idle, {112, 570}, {0, 0}, 0.25, true, false},
         {"02_running.png", LocomotionState::Running, {640, 570}, {245, 0}, 0.23, true, false},
         {"03_braking.png", LocomotionState::Braking, {720, 570}, {110, 0}, 0.06, true, false},
         {"04_turning.png", LocomotionState::Turning, {790, 570}, {-70, 0}, 0.04, false, false},
         {"05_rising.png", LocomotionState::Rising, {1020, 385}, {150, -310}, 0.08, true, false},
         {"06_apex.png", LocomotionState::Apex, {1240, 330}, {120, 0}, 0.0, true, false},
-        {"07_falling.png", LocomotionState::Falling, {1320, 375}, {100, 330}, 0.08, true, false},
+        {"07_falling.png", LocomotionState::Falling, {1320, 320}, {100, 330}, 0.08, true, false},
         {"08_landing.png", LocomotionState::Landing, {1510, 284}, {65, 0}, 0.04, true, false},
-        {"09_wide_room.png", LocomotionState::Running, {940, 570}, {245, 0}, 0.14, true, false},
-        {"10_vertical_camera.png", LocomotionState::Apex, {1510, 274}, {0, 0}, 0.0, true, false},
-        {"11_debug_overlay.png", LocomotionState::Falling, {1240, 340}, {130, 250}, 0.1, true, true},
+        {"09_orange_platform.png", LocomotionState::Idle, {1210, 368}, {0, 0}, 0.25, true, false},
+        {"10_wide_room.png", LocomotionState::Running, {940, 570}, {245, 0}, 0.14, true, false},
+        {"11_vertical_camera.png", LocomotionState::Apex, {1510, 274}, {0, 0}, 0.0, true, false},
+        {"12_debug_overlay.png", LocomotionState::Falling, {1240, 340}, {130, 250}, 0.1, true, true},
     }};
     bool ok = true;
     for (const auto& capture : cases) {
