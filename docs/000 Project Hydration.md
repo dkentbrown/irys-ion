@@ -2,7 +2,7 @@
 
 **Version:** 3.0  
 **Status:** Current  
-**Last Updated:** 2026-07-15
+**Last Updated:** 2026-07-16
 
 ---
 
@@ -215,8 +215,6 @@ Story, revelations, dialogue progression, final-act causality, and ending.
 
 Engineering architecture and implementation constraints.
 
-This file is not yet complete.
-
 ## 011 Art Direction
 
 Visual identity, modular Irys construction, Ion, Anti-Irys, environments, camera, effects, HUD, and cutscene presentation.
@@ -248,8 +246,8 @@ Read the current repository in this order:
 11. `docs/narrative/009 Narrative Specification.md`
 12. `docs/art/011 Art Direction.md`
 13. `docs/audio/012 Audio Direction.md`
-14. `docs/technical/010 Technical Specification.md` when complete
-15. `docs/999 Sol Implementation Specification.md` when complete
+14. `docs/technical/010 Technical Specification.md`
+15. `docs/999 Sol Implementation Specification.md`
 16. Design Notebook only when unresolved historical context is materially relevant
 
 Do not treat document numbering alone as dependency order.
@@ -373,9 +371,6 @@ Approved:
 - Art Direction
 - Audio Direction
 - Technical Specification
-
-Not yet complete:
-
 - Sol Implementation Specification
 
 ---
@@ -573,17 +568,27 @@ Do not infer these systems from old terminology, notebook material, commit histo
 
 # Current Work
 
-The immediate active section is:
+Documentation design work is complete.
+
+The repository is ready for the one-shot Sol implementation experiment.
+
+The next action is to start a GPT-5.6 Sol implementation session.
+
+Sol must read:
 
 `docs/999 Sol Implementation Specification.md`
 
-The next work is:
+The project should not return to broad design expansion unless implementation exposes a concrete contradiction or blocker.
 
-1. assemble the complete Sol implementation specification;
-2. perform a final cross-document contradiction audit;
-3. begin the one-shot Sol implementation experiment.
+Future work should now be implementation, playtesting, tuning, debugging, and asset refinement.
 
-Do not expand the documentation beyond what is necessary to reach that implementation.
+All owning specifications are Approved.
+
+`docs/999 Sol Implementation Specification.md` is the execution contract.
+
+No major creative decision should be required during implementation.
+
+Remaining uncertainty is implementation and tuning uncertainty.
 
 ---
 
