@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "simulationHz": 60,
+  "movement": {
+    "gravity": 980.0,
+    "jumpBuffer": 0.10,
+    "coyoteTime": 0.09,
+    "jumpCut": 0.48
+  },
+  "techniques": {
+    "normalDuration": 0.22,
+    "primedDuration": 0.52,
+    "primedRecovery": 0.18,
+    "advanceDamage": 18.0,
+    "ascendDamage": 16.0,
+    "descendDamage": 22.0,
+    "primedMultiplier": 1.65
+  },
+  "camera": {
+    "smoothing": 8.0,
+    "shake": 1.0
+  },
+  "audio": {
+    "master": 0.85,
+    "music": 0.62,
+    "effects": 0.88,
+    "dialogue": 0.72
+  }
+}
