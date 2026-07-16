@@ -1,0 +1,82 @@
+{
+  "texture": "irys_standard.png",
+  "frame_size": [
+    96,
+    96
+  ],
+  "columns": 9,
+  "frame_count": 27,
+  "draw_origin": [
+    48,
+    86
+  ],
+  "states": {
+    "idle": {
+      "first": 0,
+      "count": 4,
+      "fps": 6,
+      "loop": true
+    },
+    "acceleration": {
+      "first": 4,
+      "count": 2,
+      "fps": 12,
+      "loop": false
+    },
+    "run": {
+      "first": 6,
+      "count": 6,
+      "fps": 14,
+      "loop": true
+    },
+    "braking": {
+      "first": 12,
+      "count": 2,
+      "fps": 10,
+      "loop": false
+    },
+    "turning": {
+      "first": 14,
+      "count": 2,
+      "fps": 14,
+      "loop": false
+    },
+    "jump_launch": {
+      "first": 16,
+      "count": 2,
+      "fps": 14,
+      "loop": false
+    },
+    "rising": {
+      "first": 18,
+      "count": 2,
+      "fps": 9,
+      "loop": true
+    },
+    "apex": {
+      "first": 20,
+      "count": 1,
+      "fps": 1,
+      "loop": true
+    },
+    "falling": {
+      "first": 21,
+      "count": 2,
+      "fps": 8,
+      "loop": true
+    },
+    "landing": {
+      "first": 23,
+      "count": 2,
+      "fps": 13,
+      "loop": false
+    },
+    "hard_landing": {
+      "first": 25,
+      "count": 2,
+      "fps": 9,
+      "loop": false
+    }
+  },
+  "description": "Standard-anatomy temporary Irys; authored at 2x pixel-cluster scale."
+}

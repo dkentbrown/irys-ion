@@ -1,0 +1,38 @@
+{
+  "movement": {
+    "fixed_hz": 60.0,
+    "player_width": 30.0,
+    "player_height": 70.0,
+    "ground_acceleration": 1900.0,
+    "air_acceleration": 980.0,
+    "max_run_speed": 245.0,
+    "ground_deceleration": 2350.0,
+    "air_deceleration": 330.0,
+    "reversal_acceleration": 2850.0,
+    "jump_speed": 560.0,
+    "gravity": 1760.0,
+    "fall_gravity_multiplier": 1.22,
+    "jump_cut_gravity_multiplier": 3.15,
+    "max_fall_speed": 760.0,
+    "coyote_time": 0.085,
+    "jump_buffer_time": 0.095,
+    "drop_through_time": 0.18,
+    "ground_probe": 1.25,
+    "hard_landing_speed": 590.0
+  },
+  "camera": {
+    "viewport_width": 640.0,
+    "viewport_height": 360.0,
+    "dead_zone_width": 112.0,
+    "dead_zone_height": 58.0,
+    "look_ahead_distance": 92.0,
+    "look_ahead_response": 6.5,
+    "follow_response": 9.5,
+    "vertical_follow_response": 7.0,
+    "direction_hold_time": 0.11
+  },
+  "runtime": {
+    "max_catch_up_steps": 5,
+    "slow_motion_scale": 0.25
+  }
+}

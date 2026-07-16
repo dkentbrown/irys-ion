@@ -1,5 +1,6 @@
 # Build output
 build/
+build-*/
 out/
 bin/
 lib/
@@ -32,3 +33,6 @@ Testing/
 *.dll
 *.exe
 *.app
+
+# Runtime captures and local tuning failures
+screenshots/

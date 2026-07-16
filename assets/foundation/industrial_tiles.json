@@ -1,0 +1,26 @@
+{
+  "texture": "industrial_tiles.png",
+  "tile_size": [
+    128,
+    128
+  ],
+  "tiles": {
+    "floor": [
+      0,
+      0
+    ],
+    "platform": [
+      1,
+      0
+    ],
+    "wall": [
+      0,
+      1
+    ],
+    "machine": [
+      1,
+      1
+    ]
+  },
+  "pixel_cluster_scale": 2
+}
