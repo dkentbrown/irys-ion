@@ -121,6 +121,7 @@ Frame BodyGenerator::generate(float qualityBias) {
     f.archetype = static_cast<Archetype>(rng_.rangeInt(0, 7));
     f.dominantSide = rng_.chance(0.5f) ? Side::Left : Side::Right;
     f.weaponSide = f.dominantSide;
+    f.weaponHand = f.weaponSide == Side::Left ? 0 : 1;
     f.palette = static_cast<std::uint32_t>(rng_.rangeInt(0, 5));
     const float quality = clamp(rng_.range(-0.32f, 0.38f) + qualityBias + (rng_.chance(0.035f) ? 0.36f : 0.0f), -0.42f, 0.68f);
     f.stature = rng_.range(0.86f, 1.16f);
@@ -137,9 +138,9 @@ Frame BodyGenerator::generate(float qualityBias) {
         case Archetype::Balanced: f.traits.push_back("Balanced Chassis"); break;
     }
     switch (f.anatomy) {
-        case Anatomy::SingleArm: f.traits.push_back("SingleArm Specialization"); reach *= 0.96f; break;
+        case Anatomy::SingleArm: f.weaponSide = rng_.chance(0.5f) ? Side::Left : Side::Right; f.weaponHand = f.weaponSide == Side::Left ? 0 : 1; f.traits.push_back("SingleArm Specialization"); if(f.weaponSide!=f.dominantSide){f.traits.push_back("Non-dominant Interface");recovery*=1.05f;} reach *= 0.96f; break;
         case Anatomy::SingleLeg: f.traits.push_back("SingleLeg Wheel-Foot"); speed *= 0.94f; recovery *= 1.06f; break;
-        case Anatomy::AdditionalArm: f.traits.push_back("AdditionalArm Stabilizer"); reach *= 1.08f; recovery *= 0.94f; break;
+        case Anatomy::AdditionalArm: f.weaponHand=rng_.rangeInt(0,2); f.weaponSide=f.weaponHand==0?Side::Left:Side::Right; f.traits.push_back("AdditionalArm Stabilizer"); f.traits.push_back("Automatic Hand Transfer"); reach *= 1.08f; recovery *= 0.94f; break;
         case Anatomy::Standard: f.traits.push_back("Standard Rig"); break;
     }
     const float q = 1.0f + quality * 0.32f;

@@ -54,6 +54,7 @@ struct Frame {
     Archetype archetype{Archetype::Balanced};
     Side dominantSide{Side::Right};
     Side weaponSide{Side::Right};
+    int weaponHand{1};
     CollisionProfile collision{CollisionProfile::Standard};
     std::vector<std::string> traits;
     float maxIntegrity{100.0f};

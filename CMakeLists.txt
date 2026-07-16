@@ -18,7 +18,7 @@ if(NOT raylib_FOUND)
   set(BUILD_GAMES OFF CACHE BOOL "" FORCE)
   FetchContent_Declare(raylib
     URL https://github.com/raysan5/raylib/archive/refs/tags/6.0.tar.gz
-    URL_HASH SHA256=9a9076afc1e767c119fb701ad99640393e5d07c96ff6a47435e5b44b5a00ac1d)
+    URL_HASH SHA256=2b3ee1e2120c7a0796b33062c7e9a694dd8a8caa56a96319ac8c8ecf54a90d0b)
   FetchContent_MakeAvailable(raylib)
 endif()
 

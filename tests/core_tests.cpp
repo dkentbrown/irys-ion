@@ -23,6 +23,7 @@ int main() {
             CHECK(frame.viable()); anatomies.insert(frame.anatomy);
             CHECK(frame.integrity == frame.maxIntegrity);
             CHECK(frame.traits.size() >= 2);
+            CHECK(frame.weaponHand >= 0 && frame.weaponHand <= (frame.anatomy == Anatomy::AdditionalArm ? 2 : 1));
         }
     }
     CHECK(anatomies.size() == 4);
