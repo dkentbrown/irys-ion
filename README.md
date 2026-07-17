@@ -1,14 +1,17 @@
 # Irys+Ion Player Foundation
 
-This branch contains the first quality gate only: Standard-frame Irys movement,
-authored locomotion animation, a bounded gameplay camera, one industrial movement
+This branch contains the first quality gate only: articulated Irys movement,
+authored forward-kinematic locomotion, a bounded gameplay camera, one industrial movement
 room, pixel-stable rendering, tuning reload, diagnostics, and deterministic tests.
 It intentionally contains no combat, enemies, progression, narrative, audio, or
 additional rooms.
 
 The visual foundation uses a restrained cool-grey metal test chamber, orange-lit
 traversal edges, and electric-blue identity lighting on white-haired synthetic
-Irys and the Ion blade she visibly carries. The three images under
+Irys and the Ion blade she visibly carries. Irys is assembled at runtime from
+transparent body-part textures under `assets/foundation/irys_rig/`; `rig.json`
+defines pivots, attachments, hierarchy, scale, and render order, while
+`animations.json` contains the authored transform tracks. The three images under
 `references/player-foundation/` are committed art-direction references only and
 are never loaded by the executable.
 
@@ -65,8 +68,9 @@ controls are ignored until developer mode is enabled.
 
 The overlay displays player collision bounds and velocity, grounded and one-way
 state, coyote and jump-buffer timers, camera position and target, the camera dead
-zone, room bounds, platform surfaces, interpolation alpha, animation state, and
-named teleport markers. It is disabled at startup.
+zone, room bounds, platform surfaces, interpolation alpha, animation state, named
+teleport markers, rig root, pelvis, hip, knee, ankle, shoulder, elbow, hand grip,
+and Ion attachment pivots. It is disabled at startup.
 
 Malformed, missing, non-finite, or out-of-range tuning values are rejected with
 an explicit error. A failed hot reload leaves the active tuning unchanged and
@@ -78,15 +82,16 @@ Render the representative validation set without autoplay:
 
 ```sh
 build-player-foundation/irys_ion_foundation.app/Contents/MacOS/irys_ion_foundation \
-  --capture-dir /tmp/irys-player-foundation
+  --capture-dir /tmp/irys-player-rig-review
 ```
 
-This writes 640x360 PNGs for idle, running, braking, turning, rising, apex,
-falling, landing, the orange-lit platform treatment, wide-room framing,
-vertical-camera framing, and the diagnostic overlay. These captures are
-validation artifacts and are not tracked.
+This writes 640x360 PNGs for idle, acceleration, four run phases, braking, turn
+start/midpoint/completion, jump launch, rising, apex, falling, soft and hard
+landing compression, left facing, and the diagnostic joint overlay. These
+captures are validation artifacts and are not tracked.
 
-The committed `tools/generate_foundation_assets.py` regenerates the Irys atlas,
-grey metallic room layers, collision-aligned platform skins, and industrial
-material atlas using only the Python standard library. Python is not used by
-configuration, compilation, testing, or play.
+The committed `tools/generate_foundation_assets.py` deterministically regenerates
+the layered rig textures and authored JSON, grey metallic room layers,
+collision-aligned platform skins, and industrial material atlas using only the
+Python standard library. Python is not used by configuration, compilation,
+testing, or play.

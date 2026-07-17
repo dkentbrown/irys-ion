@@ -1,0 +1,7682 @@
+{
+  "version": 1,
+  "clips": [
+    {
+      "name": "idle",
+      "duration": 1.6,
+      "loop": true,
+      "tracks": [
+        {
+          "part": "root",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 0,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.8,
+              "translation": [
+                0,
+                -1
+              ],
+              "rotation": 0,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 1.6,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 0,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "pelvis",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                -0.7,
+                0
+              ],
+              "rotation": -2,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.8,
+              "translation": [
+                0.7,
+                0
+              ],
+              "rotation": 1,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 1.6,
+              "translation": [
+                -0.7,
+                0
+              ],
+              "rotation": -2,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "torso_lower",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 2,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.8,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -2,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 1.6,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 2,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "torso_upper",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 2,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.8,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -1,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 1.6,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 2,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "head",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -2,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.8,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 2,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 1.6,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -2,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "upper_arm_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 8,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.8,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 11,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 1.6,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 8,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "forearm_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 18,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.8,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 15,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 1.6,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 18,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "upper_arm_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -5,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.8,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -7,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 1.6,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -5,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "forearm_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 14,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.8,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 17,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 1.6,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 14,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "thigh_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -8,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.8,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -5,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 1.6,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -8,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "shin_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 18,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.8,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 14,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 1.6,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 18,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "foot_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -6,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.8,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -6,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 1.6,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -6,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "thigh_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 7,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.8,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 8,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 1.6,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 7,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "shin_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 14,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.8,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 16,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 1.6,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 14,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "foot_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -5,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.8,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -5,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 1.6,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -5,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "ion_grip",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 2,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.8,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 5,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 1.6,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 2,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "acceleration",
+      "duration": 0.36,
+      "loop": false,
+      "tracks": [
+        {
+          "part": "root",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                1
+              ],
+              "rotation": 0,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.18,
+              "translation": [
+                0,
+                -1
+              ],
+              "rotation": 0,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.36,
+              "translation": [
+                0,
+                -2
+              ],
+              "rotation": 0,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "pelvis",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -2,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.18,
+              "translation": [
+                1,
+                0
+              ],
+              "rotation": 5,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.36,
+              "translation": [
+                2,
+                0
+              ],
+              "rotation": 7,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "torso_lower",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 1,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.18,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 4,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.36,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 5,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "torso_upper",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 5,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.18,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 12,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.36,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 15,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "head",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -3,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.18,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -8,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.36,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -10,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "upper_arm_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 8,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.18,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 26,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.36,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 34,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "forearm_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 18,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.18,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 30,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.36,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 36,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "upper_arm_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -5,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.18,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -25,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.36,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -32,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "forearm_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 14,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.18,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 8,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.36,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 4,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "thigh_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -14,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.18,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -31,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.36,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -37,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "shin_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 25,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.18,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 43,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.36,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 52,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "foot_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -6,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.18,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 8,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.36,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 10,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "thigh_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 12,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.18,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 24,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.36,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 28,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "shin_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 12,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.18,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 8,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.36,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 5,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "foot_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -5,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.18,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -12,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.36,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -15,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "ion_grip",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -2,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.18,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -38,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.36,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -55,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "run",
+      "duration": 0.64,
+      "loop": true,
+      "tracks": [
+        {
+          "part": "root",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 0,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.16,
+              "translation": [
+                0,
+                -3
+              ],
+              "rotation": 0,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.32,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 0,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.48,
+              "translation": [
+                0,
+                -3
+              ],
+              "rotation": 0,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.64,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 0,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "pelvis",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 4,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.16,
+              "translation": [
+                1,
+                0
+              ],
+              "rotation": -3,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.32,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 4,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.48,
+              "translation": [
+                -1,
+                0
+              ],
+              "rotation": -3,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.64,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 4,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "torso_lower",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 3,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.16,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 5,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.32,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 3,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.48,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 5,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.64,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 3,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "torso_upper",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 10,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.16,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 11,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.32,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 10,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.48,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 11,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.64,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 10,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "head",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -7,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.16,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -6,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.32,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -7,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.48,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -6,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.64,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -7,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "upper_arm_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 32,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.16,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 2,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.32,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -32,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.48,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 0,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.64,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 32,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "forearm_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 35,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.16,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 30,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.32,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 7,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.48,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 42,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.64,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 35,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "upper_arm_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -34,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.16,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -5,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.32,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 30,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.48,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 4,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.64,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -34,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "forearm_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 5,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.16,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 40,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.32,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 34,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.48,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 27,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.64,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 5,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "thigh_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -34,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.16,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -8,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.32,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 27,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.48,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 4,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.64,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -34,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "shin_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 24,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.16,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 38,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.32,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 43,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.48,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 72,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.64,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 24,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "foot_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 12,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.16,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -4,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.32,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -18,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.48,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -28,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.64,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 12,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "thigh_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 28,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.16,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 5,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.32,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -35,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.48,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -9,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.64,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 28,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "shin_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 42,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.16,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 72,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.32,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 25,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.48,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 39,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.64,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 42,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "foot_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -18,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.16,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -28,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.32,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 13,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.48,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -3,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.64,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -18,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "ion_grip",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -50,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.16,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -12,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.32,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 41,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.48,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -22,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.64,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -50,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "brake",
+      "duration": 0.4,
+      "loop": false,
+      "tracks": [
+        {
+          "part": "root",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                1
+              ],
+              "rotation": 0,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.2,
+              "translation": [
+                -2,
+                4
+              ],
+              "rotation": 0,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.4,
+              "translation": [
+                0,
+                2
+              ],
+              "rotation": 0,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "pelvis",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -5,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.2,
+              "translation": [
+                -2,
+                0
+              ],
+              "rotation": -8,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.4,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -3,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "torso_lower",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -4,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.2,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -5,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.4,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -2,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "torso_upper",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -8,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.2,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -13,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.4,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -5,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "head",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 6,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.2,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 9,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.4,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 4,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "upper_arm_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -16,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.2,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -22,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.4,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 8,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "forearm_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 20,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.2,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 28,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.4,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 18,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "upper_arm_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 20,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.2,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 25,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.4,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -5,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "forearm_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 30,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.2,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 34,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.4,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 14,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "thigh_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -27,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.2,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -34,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.4,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -18,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "shin_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 38,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.2,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 52,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.4,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 32,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "foot_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 18,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.2,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 24,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.4,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 12,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "thigh_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 20,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.2,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 26,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.4,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 14,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "shin_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 28,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.2,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 42,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.4,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 24,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "foot_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -15,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.2,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -20,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.4,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -5,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "ion_grip",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 4,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.2,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -2,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.4,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -11,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "turn",
+      "duration": 0.48,
+      "loop": false,
+      "tracks": [
+        {
+          "part": "root",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                -2,
+                3
+              ],
+              "rotation": 0,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.24,
+              "translation": [
+                0,
+                5
+              ],
+              "rotation": 0,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.48,
+              "translation": [
+                1,
+                0
+              ],
+              "rotation": 0,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "pelvis",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                -2,
+                0
+              ],
+              "rotation": -10,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.24,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 12,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.48,
+              "translation": [
+                2,
+                0
+              ],
+              "rotation": 6,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "torso_lower",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -5,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.24,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -8,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.48,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 4,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "torso_upper",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -14,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.24,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 1,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.48,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 14,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "head",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 10,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.24,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -3,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.48,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -9,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "upper_arm_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -28,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.24,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 8,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.48,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 30,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "forearm_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 32,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.24,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 58,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.48,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 36,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "upper_arm_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 25,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.24,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -7,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.48,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -28,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "forearm_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 35,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.24,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 50,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.48,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 8,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "thigh_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -30,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.24,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -8,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.48,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -32,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "shin_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 51,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.24,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 62,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.48,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 44,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "foot_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 20,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.24,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -12,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.48,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 8,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "thigh_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 22,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.24,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 8,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.48,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 24,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "shin_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 38,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.24,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 58,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.48,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 10,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "foot_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -16,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.24,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -8,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.48,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -14,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "ion_grip",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -2,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.24,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -24,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.48,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -50,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "jump_launch",
+      "duration": 0.3,
+      "loop": false,
+      "tracks": [
+        {
+          "part": "root",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                7
+              ],
+              "rotation": 0,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.15,
+              "translation": [
+                0,
+                4
+              ],
+              "rotation": 0,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.3,
+              "translation": [
+                0,
+                -3
+              ],
+              "rotation": 0,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "pelvis",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -4,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.15,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 5,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.3,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 7,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "torso_lower",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -3,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.15,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 5,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.3,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 6,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "torso_upper",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -6,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.15,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 10,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.3,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 13,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "head",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 5,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.15,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -8,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.3,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -9,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "upper_arm_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -18,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.15,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 24,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.3,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 36,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "forearm_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 40,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.15,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 34,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.3,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 28,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "upper_arm_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 18,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.15,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -23,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.3,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -32,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "forearm_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 42,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.15,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 20,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.3,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 9,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "thigh_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -28,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.15,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -12,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.3,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 4,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "shin_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 66,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.15,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 28,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.3,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 8,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "foot_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 19,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.15,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 6,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.3,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -8,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "thigh_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 25,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.15,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 11,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.3,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 15,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "shin_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 61,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.15,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 24,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.3,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 10,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "foot_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -18,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.15,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -7,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.3,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -10,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "ion_grip",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -10,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.15,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -43,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.3,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -52,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "rising",
+      "duration": 0.5,
+      "loop": false,
+      "tracks": [
+        {
+          "part": "root",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                -2
+              ],
+              "rotation": 0,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.25,
+              "translation": [
+                0,
+                -1
+              ],
+              "rotation": 0,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.5,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 0,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "pelvis",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 6,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.25,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 4,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.5,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 2,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "torso_lower",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 5,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.25,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 4,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.5,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 3,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "torso_upper",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 12,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.25,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 9,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.5,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 7,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "head",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -8,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.25,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -6,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.5,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -5,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "upper_arm_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 34,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.25,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 24,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.5,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 18,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "forearm_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 24,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.25,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 34,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.5,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 38,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "upper_arm_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -30,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.25,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -20,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.5,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -14,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "forearm_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 10,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.25,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 18,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.5,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 24,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "thigh_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 7,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.25,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 12,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.5,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 16,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "shin_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 12,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.25,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 18,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.5,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 24,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "foot_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -10,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.25,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -8,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.5,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -6,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "thigh_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 21,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.25,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 27,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.5,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 22,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "shin_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 18,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.25,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 25,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.5,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 30,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "foot_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -12,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.25,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -15,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.5,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -12,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "ion_grip",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -48,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.25,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -44,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.5,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -38,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "apex",
+      "duration": 0.4,
+      "loop": false,
+      "tracks": [
+        {
+          "part": "root",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 0,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.2,
+              "translation": [
+                0,
+                1
+              ],
+              "rotation": 0,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.4,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 0,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "pelvis",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 0,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.2,
+              "translation": [
+                1,
+                0
+              ],
+              "rotation": -2,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.4,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 0,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "torso_lower",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 2,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.2,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 1,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.4,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 2,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "torso_upper",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 3,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.2,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 1,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.4,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 3,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "head",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -2,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.2,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 0,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.4,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -2,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "upper_arm_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 8,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.2,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 2,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.4,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 8,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "forearm_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 44,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.2,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 48,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.4,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 44,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "upper_arm_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -5,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.2,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 2,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.4,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -5,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "forearm_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 35,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.2,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 40,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.4,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 35,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "thigh_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -20,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.2,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -27,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.4,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -20,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "shin_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 52,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.2,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 61,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.4,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 52,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "foot_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -14,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.2,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -18,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.4,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -14,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "thigh_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 18,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.2,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 24,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.4,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 18,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "shin_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 47,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.2,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 56,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.4,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 47,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "foot_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -10,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.2,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -13,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.4,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -10,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "ion_grip",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -28,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.2,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -22,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.4,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -28,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "falling",
+      "duration": 0.5,
+      "loop": false,
+      "tracks": [
+        {
+          "part": "root",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 0,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.25,
+              "translation": [
+                0,
+                1
+              ],
+              "rotation": 0,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.5,
+              "translation": [
+                0,
+                2
+              ],
+              "rotation": 0,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "pelvis",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -2,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.25,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -4,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.5,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -5,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "torso_lower",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -1,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.25,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -2,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.5,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -3,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "torso_upper",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -4,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.25,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -7,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.5,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -8,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "head",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 4,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.25,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 6,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.5,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 7,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "upper_arm_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -8,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.25,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -14,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.5,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -18,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "forearm_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 40,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.25,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 35,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.5,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 32,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "upper_arm_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 12,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.25,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 18,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.5,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 22,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "forearm_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 43,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.25,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 39,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.5,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 36,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "thigh_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -15,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.25,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -20,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.5,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -24,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "shin_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 38,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.25,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 46,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.5,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 52,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "foot_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 3,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.25,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 8,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.5,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 12,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "thigh_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 16,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.25,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 20,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.5,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 23,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "shin_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 34,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.25,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 43,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.5,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 49,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "foot_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -4,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.25,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -7,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.5,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -10,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "ion_grip",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 2,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.25,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 17,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.5,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 26,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "soft_landing",
+      "duration": 0.32,
+      "loop": false,
+      "tracks": [
+        {
+          "part": "root",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                6
+              ],
+              "rotation": 0,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.16,
+              "translation": [
+                0,
+                8
+              ],
+              "rotation": 0,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.32,
+              "translation": [
+                0,
+                1
+              ],
+              "rotation": 0,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "pelvis",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -5,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.16,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -7,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.32,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -2,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "torso_lower",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -2,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.16,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -3,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.32,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 1,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "torso_upper",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -5,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.16,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -8,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.32,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 1,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "head",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 5,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.16,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 7,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.32,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -1,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "upper_arm_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -15,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.16,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -20,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.32,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 8,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "forearm_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 38,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.16,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 42,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.32,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 18,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "upper_arm_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 18,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.16,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 23,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.32,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -5,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "forearm_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 41,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.16,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 45,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.32,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 14,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "thigh_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -27,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.16,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -34,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.32,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -10,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "shin_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 61,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.16,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 72,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.32,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 24,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "foot_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 19,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.16,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 24,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.32,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -3,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "thigh_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 24,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.16,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 31,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.32,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 10,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "shin_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 55,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.16,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 68,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.32,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 22,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "foot_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -17,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.16,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -22,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.32,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -5,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "ion_grip",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 12,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.16,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 17,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.32,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 2,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "hard_landing",
+      "duration": 0.46,
+      "loop": false,
+      "tracks": [
+        {
+          "part": "root",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                11
+              ],
+              "rotation": 0,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.23,
+              "translation": [
+                -1,
+                14
+              ],
+              "rotation": 0,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.46,
+              "translation": [
+                0,
+                3
+              ],
+              "rotation": 0,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "pelvis",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -10,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.23,
+              "translation": [
+                -2,
+                0
+              ],
+              "rotation": -13,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.46,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -4,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "torso_lower",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -7,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.23,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -9,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.46,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -2,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "torso_upper",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -15,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.23,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -19,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.46,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -4,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "head",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 12,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.23,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 15,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.46,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 4,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "upper_arm_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -32,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.23,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -38,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.46,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -10,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "forearm_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 52,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.23,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 58,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.46,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 30,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "upper_arm_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 35,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.23,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 42,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.46,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 12,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "forearm_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 55,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.23,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 60,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.46,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 33,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "thigh_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -42,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.23,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -49,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.46,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -18,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "shin_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 84,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.23,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 94,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.46,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 39,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "foot_front",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 30,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.23,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 35,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.46,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 10,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "thigh_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 39,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.23,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 45,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.46,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 17,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "shin_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 78,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.23,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 90,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.46,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 36,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "foot_rear",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -28,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.23,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -33,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.46,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": -9,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "part": "ion_grip",
+          "keyframes": [
+            {
+              "time": 0,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 28,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.23,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 34,
+              "scale": [
+                1,
+                1
+              ]
+            },
+            {
+              "time": 0.46,
+              "translation": [
+                0,
+                0
+              ],
+              "rotation": 14,
+              "scale": [
+                1,
+                1
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

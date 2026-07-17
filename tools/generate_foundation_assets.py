@@ -114,163 +114,358 @@ ORANGE = (255, 147, 31, 255)
 ORANGE_HOT = (255, 207, 102, 255)
 
 
-def segment(c, a, b, thickness, base, light):
-    c.line(a[0], a[1], b[0], b[1], INK, thickness + 2)
-    c.line(a[0], a[1], b[0], b[1], base, thickness)
-    c.line(a[0], a[1] - 1, b[0], b[1] - 1, light, max(1, thickness - 2))
+def edged_polygon(c, points, fill, edge=INK):
+    c.polygon(points, edge)
+    cx = sum(point[0] for point in points) / len(points)
+    cy = sum(point[1] for point in points) / len(points)
+    c.polygon([(x + (1 if x < cx else -1), y + (1 if y < cy else -1)) for x, y in points], fill)
 
 
-def draw_irys(frame, pose):
-    c = Canvas(48, 48)
-    lean = pose.get("lean", 0)
-    bob = pose.get("bob", 0)
-    hip = (23 + lean * 0.25, 29 + bob)
-    chest = (23 + lean, 20 + bob)
-    head = (24 + lean * 1.2, 11 + bob)
-    stride = pose.get("stride", 0)
-    arm = pose.get("arm", -stride)
-    crouch = pose.get("crouch", 0)
-    hip = (hip[0], hip[1] + crouch)
-    chest = (chest[0], chest[1] + crouch * 0.35)
-    head = (head[0], head[1] + crouch * 0.2)
+def generate_rig_pieces():
+    rig_out = OUT / "irys_rig"
+    pieces = {}
 
-    back_knee = (20 - stride * 2.2, 36 + crouch * 0.45)
-    back_foot = (18 - stride * 4.0, 44)
-    front_knee = (27 + stride * 2.3, 36 + crouch * 0.45)
-    front_foot = (29 + stride * 4.0, 44)
-    if pose.get("air"):
-        phase = pose.get("air_phase", 0)
-        if phase < 0:  # Rising: long upward line through the body and trailing feet.
-            back_knee, back_foot = (20 - stride, 34), (18 - stride * 2, 40)
-            front_knee, front_foot = (27 + stride, 33), (30 + stride * 2, 39)
-        elif phase == 0:  # Apex: legs separate slightly without becoming a ground crouch.
-            back_knee, back_foot = (19, 34), (18, 39)
-            front_knee, front_foot = (28, 34), (31, 39)
-        else:  # Falling: both feet reach toward the next surface.
-            back_knee, back_foot = (21 - stride, 35), (20 - stride, 42)
-            front_knee, front_foot = (27 + stride, 35), (29 + stride, 42)
-    if pose.get("brake"):
-        back_foot, front_foot = (16, 44), (31, 44)
-        back_knee, front_knee = (20, 35), (27, 36)
+    def save(name, canvas, pivot):
+        canvas.upscale(2).save_png(rig_out / f"{name}.png")
+        pieces[name] = {"texture": f"{name}.png", "pivot": [pivot[0] * 2, pivot[1] * 2]}
 
-    # Rear limbs establish depth with pale synthetic plates over graphite joints.
-    segment(c, hip, back_knee, 4, GRAPHITE, GRAPHITE_LIT)
-    segment(c, back_knee, back_foot, 3, JOINT, PALE)
-    c.polygon([(back_foot[0] - 2, back_foot[1] - 1), (back_foot[0] + 5, back_foot[1] - 1),
-               (back_foot[0] + 4, back_foot[1] + 1), (back_foot[0] - 2, back_foot[1] + 1)], INK)
-    c.put(back_knee[0], back_knee[1], CYAN)
+    save("root", Canvas(1, 1), (0, 0))
 
-    shoulder = (chest[0] - 1, chest[1] - 1)
-    rear_elbow = (20 - arm * 2.5 + lean, 26 + bob)
-    rear_hand = (18 - arm * 4.0 + lean, 30 + bob)
-    segment(c, shoulder, rear_elbow, 3, GRAPHITE, GRAPHITE_LIT)
-    segment(c, rear_elbow, rear_hand, 2, JOINT, PALE)
+    c = Canvas(10, 7)
+    edged_polygon(c, [(1, 2), (3, 0), (7, 0), (9, 2), (8, 6), (2, 6)], GRAPHITE)
+    c.line(2, 3, 8, 3, PALE, 1)
+    c.line(4, 4, 6, 4, CYAN, 1)
+    save("pelvis", c, (5, 3))
 
-    # Adult synthetic torso: narrow waist, armored rib plates, exposed engineered seams.
-    c.polygon([(chest[0] - 5, chest[1] - 4), (chest[0] + 5, chest[1] - 4),
-               (hip[0] + 4, hip[1]), (hip[0] - 4, hip[1])], INK)
-    c.polygon([(chest[0] - 4, chest[1] - 3), (chest[0] + 4, chest[1] - 3),
-               (hip[0] + 3, hip[1] - 1), (hip[0] - 3, hip[1] - 1)], GRAPHITE)
-    c.polygon([(chest[0] - 4, chest[1] - 3), (chest[0], chest[1] - 1),
-               (chest[0] + 4, chest[1] - 3), (chest[0] + 2, chest[1] + 1),
-               (chest[0], chest[1] + 2), (chest[0] - 2, chest[1] + 1)], PALE)
-    c.line(chest[0], chest[1], hip[0], hip[1] - 3, GRAPHITE_LIT, 1)
-    c.rect(hip[0] - 4, hip[1] - 2, 8, 3, JOINT)
-    c.line(hip[0] - 2, hip[1] - 1, hip[0] + 2, hip[1] - 1, CYAN, 1)
-    c.rect(chest[0] - 1, chest[1] - 2, 3, 2, CYAN)
-    c.put(chest[0] + 1, chest[1] - 2, CYAN_WHITE)
+    c = Canvas(9, 10)
+    edged_polygon(c, [(2, 0), (7, 0), (8, 4), (6, 9), (3, 9), (1, 4)], GRAPHITE)
+    c.polygon([(3, 1), (6, 1), (6, 6), (5, 8), (3, 6)], GRAPHITE_LIT)
+    c.line(3, 5, 6, 5, CYAN, 1)
+    save("torso_lower", c, (4.5, 8))
 
-    segment(c, hip, front_knee, 4, GRAPHITE, GRAPHITE_LIT)
-    segment(c, front_knee, front_foot, 3, PALE, PALE_LIT)
-    c.polygon([(front_foot[0] - 2, front_foot[1] - 1), (front_foot[0] + 6, front_foot[1] - 1),
-               (front_foot[0] + 5, front_foot[1] + 1), (front_foot[0] - 2, front_foot[1] + 1)], INK)
-    c.line(front_knee[0] - 1, front_knee[1], front_foot[0], front_foot[1] - 2, CYAN, 1)
+    c = Canvas(13, 12)
+    edged_polygon(c, [(2, 1), (5, 0), (8, 0), (11, 2), (12, 7), (9, 11), (4, 11), (1, 7)], GRAPHITE)
+    c.polygon([(2, 3), (5, 1), (6, 5), (4, 8), (2, 7)], PALE)
+    c.polygon([(11, 3), (8, 1), (7, 5), (9, 8), (11, 7)], PALE_LIT)
+    c.line(5, 6, 8, 6, CYAN, 1)
+    save("torso_upper", c, (6.5, 10))
 
-    front_elbow = (28 + arm * 2.0 + lean, 25 + bob)
-    front_hand = (31 + arm * 3.0 + lean, 29 + bob)
-    segment(c, (chest[0] + 2, chest[1] - 1), front_elbow, 3, GRAPHITE, PALE)
-    segment(c, front_elbow, front_hand, 2, JOINT, PALE_LIT)
-    c.put(front_elbow[0], front_elbow[1], CYAN)
+    c = Canvas(5, 6)
+    edged_polygon(c, [(1, 0), (4, 0), (4, 5), (1, 5)], JOINT)
+    c.put(2, 2, CYAN)
+    save("neck", c, (2.5, 5))
 
-    # Pale face plate and bright white bob remain stable across every movement state.
-    c.ellipse(head[0], head[1], 4.5, 5.5, INK)
-    c.polygon([(head[0] - 3, head[1] - 4), (head[0] + 3, head[1] - 3),
-               (head[0] + 4, head[1] + 1), (head[0] + 2, head[1] + 4),
-               (head[0] - 2, head[1] + 4), (head[0] - 4, head[1])], PALE)
-    c.polygon([(head[0] - 5, head[1] - 4), (head[0] + 3, head[1] - 5),
-               (head[0] + 4, head[1] - 2), (head[0] - 1, head[1] - 2),
-               (head[0] - 3, head[1] + 5), (head[0] - 6, head[1] + 2)], HAIR)
-    c.line(head[0] - 4, head[1] - 3, head[0] + 2, head[1] - 4, HAIR_LIT, 1)
-    c.put(head[0] + 3, head[1], CYAN_WHITE)
-    c.put(head[0] + 4, head[1], CYAN)
-    c.line(head[0] + 1, head[1] + 2, head[0] - 1, head[1] + 4, GRAPHITE_LIT, 1)
-    c.rect(head[0] - 5, head[1], 2, 3, JOINT)
-    c.put(head[0] - 5, head[1] + 1, CYAN)
+    c = Canvas(13, 13)
+    edged_polygon(c, [(3, 1), (8, 0), (11, 3), (12, 7), (9, 11), (5, 12), (2, 9), (1, 4)], PALE)
+    c.polygon([(7, 2), (10, 3), (10, 9), (8, 10), (7, 7)], PALE_LIT)
+    c.put(10, 6, CYAN_WHITE)
+    c.put(11, 6, CYAN)
+    c.line(7, 9, 9, 10, GRAPHITE, 1)
+    save("head", c, (6, 11))
 
-    # Ion is always visibly gripped: one constant blade, dark shell, electric-blue channel.
-    sword_angle = pose.get("sword", -0.35)
-    sx, sy = front_hand
-    length = 17
-    ex = sx + math.cos(sword_angle) * length
-    ey = sy + math.sin(sword_angle) * length
-    nx, ny = -math.sin(sword_angle), math.cos(sword_angle)
-    c.line(sx - math.cos(sword_angle) * 2, sy - math.sin(sword_angle) * 2, ex, ey, INK, 5)
-    c.line(sx, sy, ex, ey, JOINT, 3)
-    c.line(sx + nx, sy + ny, ex - math.cos(sword_angle) * 2 + nx, ey - math.sin(sword_angle) * 2 + ny, CYAN, 1)
-    c.put(ex, ey, CYAN_WHITE)
-    c.line(sx - nx * 2, sy - ny * 2, sx + nx, sy + ny, INK, 2)
-    c.line(sx - math.cos(sword_angle) * 3, sy - math.sin(sword_angle) * 3,
-           sx - math.cos(sword_angle) * 5 + nx * 2, sy - math.sin(sword_angle) * 5 + ny * 2, CYAN, 2)
-    return c
+    c = Canvas(15, 15)
+    edged_polygon(c, [(2, 2), (6, 0), (12, 2), (14, 6), (12, 12), (8, 14), (3, 12), (0, 7)], HAIR)
+    c.polygon([(2, 3), (6, 1), (4, 12), (2, 11)], HAIR_LIT)
+    c.polygon([(10, 3), (13, 5), (11, 12), (9, 13)], PALE)
+    save("hair_rear", c, (7, 11))
 
+    c = Canvas(14, 13)
+    c.polygon([(1, 3), (5, 0), (11, 1), (13, 4), (9, 3), (8, 9), (6, 5), (4, 11), (2, 9)], HAIR_LIT)
+    c.line(2, 3, 10, 1, PALE, 1)
+    c.polygon([(10, 2), (13, 4), (11, 8), (9, 5)], HAIR)
+    save("hair_front", c, (6, 11))
 
-def animation_frames():
-    frames = []
-    states = {}
+    def limb(name, width, height, rear, accent):
+        c = Canvas(width, height)
+        edged_polygon(c, [(2, 1), (width - 3, 0), (width - 1, 3),
+                          (width - 2, height - 2), (width - 4, height - 1),
+                          (1, height - 3)], GRAPHITE if rear else JOINT)
+        c.polygon([(3, 2), (width - 3, 2), (width - 3, height - 4),
+                   (width - 4, height - 2), (3, height - 4)], GRAPHITE_LIT if rear else PALE)
+        if accent:
+            c.line(2, height // 2, width - 3, height // 2 + 1, CYAN, 1)
+        save(name, c, (width / 2, 2))
 
-    def add(name, poses, fps, loop):
-        states[name] = {"first": len(frames), "count": len(poses), "fps": fps, "loop": loop}
-        frames.extend(poses)
+    for name, width, height, rear, accent in [
+        ("upper_arm_rear", 7, 12, True, False), ("forearm_rear", 6, 11, True, True),
+        ("upper_arm_front", 7, 12, False, False), ("forearm_front", 6, 11, False, True),
+        ("thigh_rear", 8, 14, True, False), ("shin_rear", 7, 13, True, True),
+        ("thigh_front", 8, 14, False, False), ("shin_front", 7, 13, False, True)]:
+        limb(name, width, height, rear, accent)
 
-    add("idle", [dict(bob=b, sword=-0.28 + b * 0.03) for b in (0, -0.35, 0, 0.3)], 6, True)
-    add("acceleration", [dict(lean=2, stride=0.4, arm=-0.5, sword=-0.55),
-                         dict(lean=3, stride=0.8, arm=-0.8, sword=-0.7)], 12, False)
-    add("run", [dict(lean=2, stride=math.sin(i * math.pi / 3), arm=-math.sin(i * math.pi / 3),
-                          bob=-abs(math.sin(i * math.pi / 3)) * 0.7, sword=-0.55)
-                for i in range(6)], 14, True)
-    add("braking", [dict(lean=-2, brake=True, crouch=1, sword=0.05),
-                    dict(lean=-1, brake=True, crouch=2, sword=-0.1)], 10, False)
-    add("turning", [dict(lean=-2, brake=True, crouch=2, sword=0.7),
-                    dict(lean=1, stride=-0.35, crouch=1, sword=-1.0)], 14, False)
-    add("jump_launch", [dict(crouch=3, brake=True, sword=-0.9),
-                        dict(air=True, air_phase=-1, stride=0.15, lean=1, sword=-1.05)], 14, False)
-    add("rising", [dict(air=True, air_phase=-1, stride=0.25, lean=1, sword=-1.15),
-                   dict(air=True, air_phase=-1, stride=-0.2, lean=1, sword=-0.95)], 9, True)
-    add("apex", [dict(air=True, air_phase=0, stride=0.4, sword=-0.25)], 1, True)
-    add("falling", [dict(air=True, air_phase=1, stride=-0.35, lean=-1, sword=0.15),
-                    dict(air=True, air_phase=1, stride=0.25, lean=-1, sword=0.35)], 8, True)
-    add("landing", [dict(crouch=2, brake=True, sword=0.25), dict(crouch=1, sword=-0.15)], 13, False)
-    add("hard_landing", [dict(crouch=5, brake=True, lean=-2, sword=0.65),
-                         dict(crouch=3, brake=True, lean=-1, sword=0.25)], 9, False)
-    return frames, states
+    for name, rear in (("hand_rear", True), ("hand_front", False)):
+        c = Canvas(6, 7)
+        edged_polygon(c, [(1, 1), (4, 0), (5, 3), (4, 6), (2, 6), (0, 3)], JOINT if rear else PALE)
+        c.put(3, 3, CYAN)
+        save(name, c, (3, 2))
+
+    for name, rear in (("foot_rear", True), ("foot_front", False)):
+        c = Canvas(10, 6)
+        edged_polygon(c, [(1, 0), (5, 0), (6, 2), (9, 3), (9, 5), (1, 5), (0, 3)], GRAPHITE if rear else PALE)
+        c.line(2, 4, 8, 4, GRAPHITE_LIT, 1)
+        c.put(3, 2, CYAN)
+        save(name, c, (3, 2))
+
+    for name, rear in (("shoulder_rear", True), ("shoulder_front", False)):
+        c = Canvas(8, 6)
+        edged_polygon(c, [(0, 3), (2, 0), (6, 0), (7, 3), (5, 5), (1, 5)], GRAPHITE if rear else PALE)
+        c.put(5, 2, CYAN)
+        save(name, c, (4, 3))
+
+    for name, rear in (("knee_rear", True), ("knee_front", False)):
+        c = Canvas(7, 7)
+        edged_polygon(c, [(2, 0), (5, 1), (6, 4), (4, 6), (1, 5), (0, 2)], GRAPHITE_LIT if rear else PALE)
+        c.put(3, 3, CYAN)
+        save(name, c, (3.5, 3.5))
+
+    for name, rear in (("ankle_rear", True), ("ankle_front", False)):
+        c = Canvas(7, 5)
+        edged_polygon(c, [(1, 0), (6, 0), (6, 4), (1, 4)], GRAPHITE if rear else PALE)
+        c.line(2, 2, 5, 2, CYAN, 1)
+        save(name, c, (3, 2))
+
+    c = Canvas(10, 7)
+    edged_polygon(c, [(0, 2), (3, 2), (4, 0), (6, 0), (7, 2), (9, 2), (9, 5), (6, 5), (5, 7), (3, 5), (0, 5)], GRAPHITE)
+    c.line(4, 1, 4, 6, CYAN, 1)
+    save("ion_grip", c, (3, 3.5))
+
+    c = Canvas(26, 8)
+    edged_polygon(c, [(0, 2), (21, 1), (25, 3), (22, 6), (0, 6)], JOINT)
+    c.polygon([(2, 3), (21, 2), (23, 3), (21, 5), (2, 5)], GRAPHITE_LIT)
+    save("ion_blade", c, (2, 4))
+
+    c = Canvas(26, 8)
+    c.line(2, 4, 21, 3, CYAN, 1)
+    c.line(4, 3, 19, 3, CYAN_WHITE, 1)
+    c.put(22, 3, CYAN_WHITE)
+    save("ion_channel", c, (2, 4))
+    return pieces
 
 
-def generate_irys():
-    poses, states = animation_frames()
-    atlas = Canvas(48 * 9, 48 * 3)
-    for index, pose in enumerate(poses):
-        atlas.blit(draw_irys(index, pose), (index % 9) * 48, (index // 9) * 48)
-    atlas.upscale(2).save_png(OUT / "irys_standard.png")
-    metadata = {
-        "texture": "irys_standard.png",
-        "frame_size": [96, 96],
-        "columns": 9,
-        "frame_count": len(poses),
-        "draw_origin": [48, 86],
-        "states": states,
-        "description": "White-haired synthetic Irys holding Ion; authored at 2x pixel-cluster scale."
-    }
-    (OUT / "irys_standard.json").write_text(json.dumps(metadata, indent=2) + "\n")
+def generate_rig_metadata(pieces):
+    rig_out = OUT / "irys_rig"
+    parts = []
+
+    def part(name, parent, attachment, order, scale=(1, 1)):
+        parts.append({"name": name, "texture": pieces[name]["texture"], "parent": parent,
+                      "pivot": pieces[name]["pivot"], "attachment": list(attachment),
+                      "render_order": order, "offset": [0, 0], "scale": list(scale)})
+
+    for args in [
+        ("root", "", (0, 0), -100), ("pelvis", "root", (0, -40), 30),
+        ("torso_lower", "pelvis", (0, -7), 31), ("torso_upper", "torso_lower", (0, -10), 32),
+        ("neck", "torso_upper", (0, -10), 35), ("head", "neck", (0, -3), 41, (.8, .8)),
+        ("hair_rear", "head", (0, 0), 1), ("hair_front", "head", (0, 0), 43),
+        ("upper_arm_rear", "torso_upper", (-5, -7), 20), ("shoulder_rear", "upper_arm_rear", (0, 0), 23),
+        ("forearm_rear", "upper_arm_rear", (0, 16), 21), ("hand_rear", "forearm_rear", (0, 15), 22),
+        ("upper_arm_front", "torso_upper", (5, -7), 60), ("shoulder_front", "upper_arm_front", (0, 0), 61),
+        ("forearm_front", "upper_arm_front", (0, 16), 62), ("hand_front", "forearm_front", (0, 15), 67),
+        ("thigh_rear", "pelvis", (-3, 2), 10), ("shin_rear", "thigh_rear", (0, 19), 11),
+        ("knee_rear", "shin_rear", (0, 0), 13), ("foot_rear", "shin_rear", (0, 18), 12),
+        ("ankle_rear", "foot_rear", (0, 0), 14), ("thigh_front", "pelvis", (3, 2), 50),
+        ("shin_front", "thigh_front", (0, 19), 51), ("knee_front", "shin_front", (0, 0), 53),
+        ("foot_front", "shin_front", (0, 18), 52), ("ankle_front", "foot_front", (0, 0), 54),
+        ("ion_grip", "hand_front", (0, 6), 66), ("ion_blade", "ion_grip", (7, 0), 64),
+        ("ion_channel", "ion_blade", (0, 0), 65)]:
+        part(*args)
+    (rig_out / "rig.json").write_text(json.dumps({"version": 1, "parts": parts}, indent=2) + "\n")
+
+
+def generate_rig_animations():
+    rig_out = OUT / "irys_rig"
+    track_names = ["root", "pelvis", "torso_lower", "torso_upper", "head",
+                   "upper_arm_front", "forearm_front", "upper_arm_rear", "forearm_rear",
+                   "thigh_front", "shin_front", "foot_front", "thigh_rear", "shin_rear",
+                   "foot_rear", "ion_grip"]
+    standing = {"root": (0, 0, 0), "pelvis": -2, "torso_lower": 1, "torso_upper": 1, "head": 0,
+                "upper_arm_front": 8, "forearm_front": 18, "upper_arm_rear": -5, "forearm_rear": 14,
+                "thigh_front": -7, "shin_front": 16, "foot_front": -6,
+                "thigh_rear": 7, "shin_rear": 14, "foot_rear": -5, "ion_grip": 28}
+    clips = []
+
+    def authored_pose(values):
+        result = dict(standing)
+        result.update(values)
+        return result
+
+    def keyframe(time, value):
+        translation, rotation = ([value[0], value[1]], value[2]) if isinstance(value, tuple) else ([0, 0], value)
+        return {"time": time, "translation": translation, "rotation": rotation, "scale": [1, 1]}
+
+    def clip(name, duration, loop, authored):
+        poses = [(time, authored_pose(values)) for time, values in authored]
+        # Ion values author its desired world-space orientation. Bake them into the
+        # hand-relative local track so runtime remains pure forward kinematics.
+        def track_value(part, values):
+            if part == "ion_grip":
+                return values[part] - values["upper_arm_front"] - values["forearm_front"]
+            return values[part]
+        clips.append({"name": name, "duration": duration, "loop": loop,
+                      "tracks": [{"part": part,
+                                  "keyframes": [keyframe(time, track_value(part, values)) for time, values in poses]}
+                                 for part in track_names]})
+
+    clip("idle", 1.6, True, [
+        (0, {"pelvis": (-.7, 0, -2), "torso_lower": 2, "torso_upper": 2, "head": -2,
+             "thigh_front": -8, "shin_front": 18, "ion_grip": 28}),
+        (.8, {"root": (0, -1, 0), "pelvis": (.7, 0, 1), "torso_lower": -2, "torso_upper": -1,
+              "head": 2, "upper_arm_front": 11, "forearm_front": 15, "upper_arm_rear": -7,
+              "forearm_rear": 17, "thigh_front": -5, "shin_front": 14,
+              "thigh_rear": 8, "shin_rear": 16, "ion_grip": 31}),
+        (1.6, {"pelvis": (-.7, 0, -2), "torso_lower": 2, "torso_upper": 2, "head": -2,
+               "thigh_front": -8, "shin_front": 18, "ion_grip": 28})])
+
+    clip("acceleration", .36, False, [
+        (0, {"root": (0, 1, 0), "torso_upper": 5, "head": -3, "thigh_front": -14,
+             "shin_front": 25, "thigh_rear": 12, "shin_rear": 12, "ion_grip": 24}),
+        (.18, {"root": (0, -1, 0), "pelvis": (1, 0, 5), "torso_lower": 4, "torso_upper": 12,
+               "head": -8, "upper_arm_front": 26, "forearm_front": 30, "upper_arm_rear": -25,
+               "forearm_rear": 8, "thigh_front": -31, "shin_front": 43, "foot_front": 8,
+               "thigh_rear": 24, "shin_rear": 8, "foot_rear": -12, "ion_grip": 18}),
+        (.36, {"root": (0, -2, 0), "pelvis": (2, 0, 7), "torso_lower": 5, "torso_upper": 15,
+               "head": -10, "upper_arm_front": 34, "forearm_front": 36, "upper_arm_rear": -32,
+               "forearm_rear": 4, "thigh_front": -37, "shin_front": 52, "foot_front": 10,
+               "thigh_rear": 28, "shin_rear": 5, "foot_rear": -15, "ion_grip": 15})])
+
+    clip("run", .64, True, [
+        (0, {"pelvis": 4, "torso_lower": 3, "torso_upper": 10, "head": -7,
+             "upper_arm_front": 32, "forearm_front": 35, "upper_arm_rear": -34, "forearm_rear": 5,
+             "thigh_front": -34, "shin_front": 24, "foot_front": 12,
+             "thigh_rear": 28, "shin_rear": 42, "foot_rear": -18, "ion_grip": 17}),
+        (.16, {"root": (0, -3, 0), "pelvis": (1, 0, -3), "torso_lower": 5, "torso_upper": 11,
+               "head": -6, "upper_arm_front": 2, "forearm_front": 30, "upper_arm_rear": -5,
+               "forearm_rear": 40, "thigh_front": -8, "shin_front": 38, "foot_front": -4,
+               "thigh_rear": 5, "shin_rear": 72, "foot_rear": -28, "ion_grip": 20}),
+        (.32, {"pelvis": 4, "torso_lower": 3, "torso_upper": 10, "head": -7,
+               "upper_arm_front": -32, "forearm_front": 7, "upper_arm_rear": 30, "forearm_rear": 34,
+               "thigh_front": 27, "shin_front": 43, "foot_front": -18,
+               "thigh_rear": -35, "shin_rear": 25, "foot_rear": 13, "ion_grip": 16}),
+        (.48, {"root": (0, -3, 0), "pelvis": (-1, 0, -3), "torso_lower": 5, "torso_upper": 11,
+               "head": -6, "upper_arm_front": 0, "forearm_front": 42, "upper_arm_rear": 4,
+               "forearm_rear": 27, "thigh_front": 4, "shin_front": 72, "foot_front": -28,
+               "thigh_rear": -9, "shin_rear": 39, "foot_rear": -3, "ion_grip": 20}),
+        (.64, {"pelvis": 4, "torso_lower": 3, "torso_upper": 10, "head": -7,
+               "upper_arm_front": 32, "forearm_front": 35, "upper_arm_rear": -34, "forearm_rear": 5,
+               "thigh_front": -34, "shin_front": 24, "foot_front": 12,
+               "thigh_rear": 28, "shin_rear": 42, "foot_rear": -18, "ion_grip": 17})])
+
+    clip("brake", .4, False, [
+        (0, {"root": (0, 1, 0), "pelvis": -5, "torso_lower": -4, "torso_upper": -8, "head": 6,
+             "upper_arm_front": -16, "forearm_front": 20, "upper_arm_rear": 20, "forearm_rear": 30,
+             "thigh_front": -27, "shin_front": 38, "foot_front": 18,
+             "thigh_rear": 20, "shin_rear": 28, "foot_rear": -15, "ion_grip": 8}),
+        (.2, {"root": (-2, 4, 0), "pelvis": (-2, 0, -8), "torso_lower": -5, "torso_upper": -13,
+              "head": 9, "upper_arm_front": -22, "forearm_front": 28, "upper_arm_rear": 25,
+              "forearm_rear": 34, "thigh_front": -34, "shin_front": 52, "foot_front": 24,
+              "thigh_rear": 26, "shin_rear": 42, "foot_rear": -20, "ion_grip": 4}),
+        (.4, {"root": (0, 2, 0), "pelvis": -3, "torso_lower": -2, "torso_upper": -5,
+              "head": 4, "thigh_front": -18, "shin_front": 32, "foot_front": 12,
+              "thigh_rear": 14, "shin_rear": 24, "ion_grip": 15})])
+
+    clip("turn", .48, False, [
+        (0, {"root": (-2, 3, 0), "pelvis": (-2, 0, -10), "torso_lower": -5, "torso_upper": -14,
+             "head": 10, "upper_arm_front": -28, "forearm_front": 32, "upper_arm_rear": 25,
+             "forearm_rear": 35, "thigh_front": -30, "shin_front": 51, "foot_front": 20,
+             "thigh_rear": 22, "shin_rear": 38, "foot_rear": -16, "ion_grip": 2}),
+        (.24, {"root": (0, 5, 0), "pelvis": (0, 0, 12), "torso_lower": -8, "torso_upper": 1,
+               "head": -3, "upper_arm_front": 8, "forearm_front": 58, "upper_arm_rear": -7,
+               "forearm_rear": 50, "thigh_front": -8, "shin_front": 62, "foot_front": -12,
+               "thigh_rear": 8, "shin_rear": 58, "foot_rear": -8, "ion_grip": 42}),
+        (.48, {"root": (1, 0, 0), "pelvis": (2, 0, 6), "torso_lower": 4, "torso_upper": 14,
+               "head": -9, "upper_arm_front": 30, "forearm_front": 36, "upper_arm_rear": -28,
+               "forearm_rear": 8, "thigh_front": -32, "shin_front": 44, "foot_front": 8,
+               "thigh_rear": 24, "shin_rear": 10, "foot_rear": -14, "ion_grip": 16})])
+
+    clip("jump_launch", .3, False, [
+        (0, {"root": (0, 7, 0), "pelvis": -4, "torso_lower": -3, "torso_upper": -6, "head": 5,
+             "upper_arm_front": -18, "forearm_front": 40, "upper_arm_rear": 18, "forearm_rear": 42,
+             "thigh_front": -28, "shin_front": 66, "foot_front": 19,
+             "thigh_rear": 25, "shin_rear": 61, "foot_rear": -18, "ion_grip": 12}),
+        (.15, {"root": (0, 4, 0), "pelvis": 5, "torso_lower": 5, "torso_upper": 10, "head": -8,
+               "upper_arm_front": 24, "forearm_front": 34, "upper_arm_rear": -23, "forearm_rear": 20,
+               "thigh_front": -12, "shin_front": 28, "foot_front": 6,
+               "thigh_rear": 11, "shin_rear": 24, "foot_rear": -7, "ion_grip": 15}),
+        (.3, {"root": (0, -3, 0), "pelvis": 7, "torso_lower": 6, "torso_upper": 13, "head": -9,
+              "upper_arm_front": 36, "forearm_front": 28, "upper_arm_rear": -32, "forearm_rear": 9,
+              "thigh_front": 4, "shin_front": 8, "foot_front": -8,
+              "thigh_rear": 15, "shin_rear": 10, "foot_rear": -10, "ion_grip": 12})])
+
+    clip("rising", .5, False, [
+        (0, {"root": (0, -2, 0), "pelvis": 6, "torso_lower": 5, "torso_upper": 12, "head": -8,
+             "upper_arm_front": 34, "forearm_front": 24, "upper_arm_rear": -30, "forearm_rear": 10,
+             "thigh_front": 7, "shin_front": 12, "foot_front": -10,
+             "thigh_rear": 21, "shin_rear": 18, "foot_rear": -12, "ion_grip": 10}),
+        (.25, {"root": (0, -1, 0), "pelvis": 4, "torso_lower": 4, "torso_upper": 9, "head": -6,
+               "upper_arm_front": 24, "forearm_front": 34, "upper_arm_rear": -20, "forearm_rear": 18,
+               "thigh_front": 12, "shin_front": 18, "foot_front": -8,
+               "thigh_rear": 27, "shin_rear": 25, "foot_rear": -15, "ion_grip": 14}),
+        (.5, {"pelvis": 2, "torso_lower": 3, "torso_upper": 7, "head": -5,
+              "upper_arm_front": 18, "forearm_front": 38, "upper_arm_rear": -14, "forearm_rear": 24,
+              "thigh_front": 16, "shin_front": 24, "foot_front": -6,
+              "thigh_rear": 22, "shin_rear": 30, "foot_rear": -12, "ion_grip": 18})])
+
+    clip("apex", .4, False, [
+        (0, {"pelvis": 0, "torso_lower": 2, "torso_upper": 3, "head": -2,
+             "upper_arm_front": 8, "forearm_front": 44, "upper_arm_rear": -5, "forearm_rear": 35,
+             "thigh_front": -20, "shin_front": 52, "foot_front": -14,
+             "thigh_rear": 18, "shin_rear": 47, "foot_rear": -10, "ion_grip": 24}),
+        (.2, {"root": (0, 1, 0), "pelvis": (1, 0, -2), "torso_upper": 1, "head": 0,
+              "upper_arm_front": 2, "forearm_front": 48, "upper_arm_rear": 2, "forearm_rear": 40,
+              "thigh_front": -27, "shin_front": 61, "foot_front": -18,
+              "thigh_rear": 24, "shin_rear": 56, "foot_rear": -13, "ion_grip": 28}),
+        (.4, {"pelvis": 0, "torso_lower": 2, "torso_upper": 3, "head": -2,
+              "upper_arm_front": 8, "forearm_front": 44, "upper_arm_rear": -5, "forearm_rear": 35,
+              "thigh_front": -20, "shin_front": 52, "foot_front": -14,
+              "thigh_rear": 18, "shin_rear": 47, "foot_rear": -10, "ion_grip": 24})])
+
+    clip("falling", .5, False, [
+        (0, {"pelvis": -2, "torso_lower": -1, "torso_upper": -4, "head": 4,
+             "upper_arm_front": -8, "forearm_front": 40, "upper_arm_rear": 12, "forearm_rear": 43,
+             "thigh_front": -15, "shin_front": 38, "foot_front": 3,
+             "thigh_rear": 16, "shin_rear": 34, "foot_rear": -4, "ion_grip": 34}),
+        (.25, {"root": (0, 1, 0), "pelvis": -4, "torso_lower": -2, "torso_upper": -7, "head": 6,
+               "upper_arm_front": -14, "forearm_front": 35, "upper_arm_rear": 18, "forearm_rear": 39,
+               "thigh_front": -20, "shin_front": 46, "foot_front": 8,
+               "thigh_rear": 20, "shin_rear": 43, "foot_rear": -7, "ion_grip": 38}),
+        (.5, {"root": (0, 2, 0), "pelvis": -5, "torso_lower": -3, "torso_upper": -8, "head": 7,
+              "upper_arm_front": -18, "forearm_front": 32, "upper_arm_rear": 22, "forearm_rear": 36,
+              "thigh_front": -24, "shin_front": 52, "foot_front": 12,
+              "thigh_rear": 23, "shin_rear": 49, "foot_rear": -10, "ion_grip": 40})])
+
+    clip("soft_landing", .32, False, [
+        (0, {"root": (0, 6, 0), "pelvis": -5, "torso_lower": -2, "torso_upper": -5, "head": 5,
+             "upper_arm_front": -15, "forearm_front": 38, "upper_arm_rear": 18, "forearm_rear": 41,
+             "thigh_front": -27, "shin_front": 61, "foot_front": 19,
+             "thigh_rear": 24, "shin_rear": 55, "foot_rear": -17, "ion_grip": 35}),
+        (.16, {"root": (0, 8, 0), "pelvis": -7, "torso_lower": -3, "torso_upper": -8, "head": 7,
+               "upper_arm_front": -20, "forearm_front": 42, "upper_arm_rear": 23, "forearm_rear": 45,
+               "thigh_front": -34, "shin_front": 72, "foot_front": 24,
+               "thigh_rear": 31, "shin_rear": 68, "foot_rear": -22, "ion_grip": 39}),
+        (.32, {"root": (0, 1, 0), "pelvis": -2, "torso_lower": 1, "torso_upper": 1, "head": -1,
+               "thigh_front": -10, "shin_front": 24, "foot_front": -3,
+               "thigh_rear": 10, "shin_rear": 22, "foot_rear": -5, "ion_grip": 28})])
+
+    clip("hard_landing", .46, False, [
+        (0, {"root": (0, 11, 0), "pelvis": -10, "torso_lower": -7, "torso_upper": -15, "head": 12,
+             "upper_arm_front": -32, "forearm_front": 52, "upper_arm_rear": 35, "forearm_rear": 55,
+             "thigh_front": -42, "shin_front": 84, "foot_front": 30,
+             "thigh_rear": 39, "shin_rear": 78, "foot_rear": -28, "ion_grip": 48}),
+        (.23, {"root": (-1, 14, 0), "pelvis": (-2, 0, -13), "torso_lower": -9, "torso_upper": -19,
+               "head": 15, "upper_arm_front": -38, "forearm_front": 58, "upper_arm_rear": 42,
+               "forearm_rear": 60, "thigh_front": -49, "shin_front": 94, "foot_front": 35,
+               "thigh_rear": 45, "shin_rear": 90, "foot_rear": -33, "ion_grip": 54}),
+        (.46, {"root": (0, 3, 0), "pelvis": -4, "torso_lower": -2, "torso_upper": -4, "head": 4,
+               "upper_arm_front": -10, "forearm_front": 30, "upper_arm_rear": 12, "forearm_rear": 33,
+               "thigh_front": -18, "shin_front": 39, "foot_front": 10,
+               "thigh_rear": 17, "shin_rear": 36, "foot_rear": -9, "ion_grip": 34})])
+
+    (rig_out / "animations.json").write_text(json.dumps({"version": 1, "clips": clips}, indent=2) + "\n")
+
+
+def generate_irys_rig():
+    pieces = generate_rig_pieces()
+    generate_rig_metadata(pieces)
+    generate_rig_animations()
 
 
 def chamfered(c, x, y, w, h, cut, fill, edge):
@@ -427,7 +622,7 @@ def generate_tiles():
 
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
-    generate_irys()
+    generate_irys_rig()
     generate_room()
     generate_tiles()
     print(f"Generated foundation assets in {OUT}")

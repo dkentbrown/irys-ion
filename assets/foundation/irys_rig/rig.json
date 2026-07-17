@@ -1,0 +1,643 @@
+{
+  "version": 1,
+  "parts": [
+    {
+      "name": "root",
+      "texture": "root.png",
+      "parent": "",
+      "pivot": [
+        0,
+        0
+      ],
+      "attachment": [
+        0,
+        0
+      ],
+      "render_order": -100,
+      "offset": [
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "pelvis",
+      "texture": "pelvis.png",
+      "parent": "root",
+      "pivot": [
+        10,
+        6
+      ],
+      "attachment": [
+        0,
+        -40
+      ],
+      "render_order": 30,
+      "offset": [
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "torso_lower",
+      "texture": "torso_lower.png",
+      "parent": "pelvis",
+      "pivot": [
+        9.0,
+        16
+      ],
+      "attachment": [
+        0,
+        -7
+      ],
+      "render_order": 31,
+      "offset": [
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "torso_upper",
+      "texture": "torso_upper.png",
+      "parent": "torso_lower",
+      "pivot": [
+        13.0,
+        20
+      ],
+      "attachment": [
+        0,
+        -10
+      ],
+      "render_order": 32,
+      "offset": [
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "neck",
+      "texture": "neck.png",
+      "parent": "torso_upper",
+      "pivot": [
+        5.0,
+        10
+      ],
+      "attachment": [
+        0,
+        -10
+      ],
+      "render_order": 35,
+      "offset": [
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "head",
+      "texture": "head.png",
+      "parent": "neck",
+      "pivot": [
+        12,
+        22
+      ],
+      "attachment": [
+        0,
+        -3
+      ],
+      "render_order": 41,
+      "offset": [
+        0,
+        0
+      ],
+      "scale": [
+        0.8,
+        0.8
+      ]
+    },
+    {
+      "name": "hair_rear",
+      "texture": "hair_rear.png",
+      "parent": "head",
+      "pivot": [
+        14,
+        22
+      ],
+      "attachment": [
+        0,
+        0
+      ],
+      "render_order": 1,
+      "offset": [
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "hair_front",
+      "texture": "hair_front.png",
+      "parent": "head",
+      "pivot": [
+        12,
+        22
+      ],
+      "attachment": [
+        0,
+        0
+      ],
+      "render_order": 43,
+      "offset": [
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "upper_arm_rear",
+      "texture": "upper_arm_rear.png",
+      "parent": "torso_upper",
+      "pivot": [
+        7.0,
+        4
+      ],
+      "attachment": [
+        -5,
+        -7
+      ],
+      "render_order": 20,
+      "offset": [
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "shoulder_rear",
+      "texture": "shoulder_rear.png",
+      "parent": "upper_arm_rear",
+      "pivot": [
+        8,
+        6
+      ],
+      "attachment": [
+        0,
+        0
+      ],
+      "render_order": 23,
+      "offset": [
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "forearm_rear",
+      "texture": "forearm_rear.png",
+      "parent": "upper_arm_rear",
+      "pivot": [
+        6.0,
+        4
+      ],
+      "attachment": [
+        0,
+        16
+      ],
+      "render_order": 21,
+      "offset": [
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "hand_rear",
+      "texture": "hand_rear.png",
+      "parent": "forearm_rear",
+      "pivot": [
+        6,
+        4
+      ],
+      "attachment": [
+        0,
+        15
+      ],
+      "render_order": 22,
+      "offset": [
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "upper_arm_front",
+      "texture": "upper_arm_front.png",
+      "parent": "torso_upper",
+      "pivot": [
+        7.0,
+        4
+      ],
+      "attachment": [
+        5,
+        -7
+      ],
+      "render_order": 60,
+      "offset": [
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "shoulder_front",
+      "texture": "shoulder_front.png",
+      "parent": "upper_arm_front",
+      "pivot": [
+        8,
+        6
+      ],
+      "attachment": [
+        0,
+        0
+      ],
+      "render_order": 61,
+      "offset": [
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "forearm_front",
+      "texture": "forearm_front.png",
+      "parent": "upper_arm_front",
+      "pivot": [
+        6.0,
+        4
+      ],
+      "attachment": [
+        0,
+        16
+      ],
+      "render_order": 62,
+      "offset": [
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "hand_front",
+      "texture": "hand_front.png",
+      "parent": "forearm_front",
+      "pivot": [
+        6,
+        4
+      ],
+      "attachment": [
+        0,
+        15
+      ],
+      "render_order": 67,
+      "offset": [
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "thigh_rear",
+      "texture": "thigh_rear.png",
+      "parent": "pelvis",
+      "pivot": [
+        8.0,
+        4
+      ],
+      "attachment": [
+        -3,
+        2
+      ],
+      "render_order": 10,
+      "offset": [
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "shin_rear",
+      "texture": "shin_rear.png",
+      "parent": "thigh_rear",
+      "pivot": [
+        7.0,
+        4
+      ],
+      "attachment": [
+        0,
+        19
+      ],
+      "render_order": 11,
+      "offset": [
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "knee_rear",
+      "texture": "knee_rear.png",
+      "parent": "shin_rear",
+      "pivot": [
+        7.0,
+        7.0
+      ],
+      "attachment": [
+        0,
+        0
+      ],
+      "render_order": 13,
+      "offset": [
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "foot_rear",
+      "texture": "foot_rear.png",
+      "parent": "shin_rear",
+      "pivot": [
+        6,
+        4
+      ],
+      "attachment": [
+        0,
+        18
+      ],
+      "render_order": 12,
+      "offset": [
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "ankle_rear",
+      "texture": "ankle_rear.png",
+      "parent": "foot_rear",
+      "pivot": [
+        6,
+        4
+      ],
+      "attachment": [
+        0,
+        0
+      ],
+      "render_order": 14,
+      "offset": [
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "thigh_front",
+      "texture": "thigh_front.png",
+      "parent": "pelvis",
+      "pivot": [
+        8.0,
+        4
+      ],
+      "attachment": [
+        3,
+        2
+      ],
+      "render_order": 50,
+      "offset": [
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "shin_front",
+      "texture": "shin_front.png",
+      "parent": "thigh_front",
+      "pivot": [
+        7.0,
+        4
+      ],
+      "attachment": [
+        0,
+        19
+      ],
+      "render_order": 51,
+      "offset": [
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "knee_front",
+      "texture": "knee_front.png",
+      "parent": "shin_front",
+      "pivot": [
+        7.0,
+        7.0
+      ],
+      "attachment": [
+        0,
+        0
+      ],
+      "render_order": 53,
+      "offset": [
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "foot_front",
+      "texture": "foot_front.png",
+      "parent": "shin_front",
+      "pivot": [
+        6,
+        4
+      ],
+      "attachment": [
+        0,
+        18
+      ],
+      "render_order": 52,
+      "offset": [
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "ankle_front",
+      "texture": "ankle_front.png",
+      "parent": "foot_front",
+      "pivot": [
+        6,
+        4
+      ],
+      "attachment": [
+        0,
+        0
+      ],
+      "render_order": 54,
+      "offset": [
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "ion_grip",
+      "texture": "ion_grip.png",
+      "parent": "hand_front",
+      "pivot": [
+        6,
+        7.0
+      ],
+      "attachment": [
+        0,
+        6
+      ],
+      "render_order": 66,
+      "offset": [
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "ion_blade",
+      "texture": "ion_blade.png",
+      "parent": "ion_grip",
+      "pivot": [
+        4,
+        8
+      ],
+      "attachment": [
+        7,
+        0
+      ],
+      "render_order": 64,
+      "offset": [
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "ion_channel",
+      "texture": "ion_channel.png",
+      "parent": "ion_blade",
+      "pivot": [
+        4,
+        8
+      ],
+      "attachment": [
+        0,
+        0
+      ],
+      "render_order": 65,
+      "offset": [
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1
+      ]
+    }
+  ]
+}

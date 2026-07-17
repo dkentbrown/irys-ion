@@ -10,6 +10,7 @@ find_package(raylib 6.0 REQUIRED)
 
 add_library(player_foundation_core
     src/player_foundation.cpp
+    src/rig.cpp
 )
 target_include_directories(player_foundation_core PUBLIC include)
 target_compile_options(player_foundation_core PRIVATE

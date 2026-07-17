@@ -1,4 +1,5 @@
 #include "irys_ion/player_foundation.hpp"
+#include "irys_ion/rig.hpp"
 
 #include <raylib.h>
 
@@ -21,43 +22,10 @@ namespace {
 
 constexpr int kCanvasWidth = 640;
 constexpr int kCanvasHeight = 360;
-constexpr int kFrameSize = 96;
-constexpr int kAtlasColumns = 9;
-
-struct AnimationClip {
-    int first;
-    int count;
-    double fps;
-    bool loop;
-};
-
-AnimationClip clipFor(LocomotionState state) {
-    switch (state) {
-    case LocomotionState::Idle: return {0, 4, 6.0, true};
-    case LocomotionState::Accelerating: return {4, 2, 12.0, false};
-    case LocomotionState::Running: return {6, 6, 14.0, true};
-    case LocomotionState::Braking: return {12, 2, 10.0, false};
-    case LocomotionState::Turning: return {14, 2, 14.0, false};
-    case LocomotionState::JumpLaunch: return {16, 2, 14.0, false};
-    case LocomotionState::Rising: return {18, 2, 9.0, true};
-    case LocomotionState::Apex: return {20, 1, 1.0, true};
-    case LocomotionState::Falling: return {21, 2, 8.0, true};
-    case LocomotionState::Landing: return {23, 2, 13.0, false};
-    case LocomotionState::HardLanding: return {25, 2, 9.0, false};
-    }
-    return {0, 1, 1.0, true};
-}
-
-int animationFrame(const PlayerState& player) {
-    const auto clip = clipFor(player.locomotion);
-    int local = static_cast<int>(std::floor(player.stateTime * clip.fps));
-    if (clip.loop) local %= clip.count;
-    else local = std::clamp(local, 0, clip.count - 1);
-    return clip.first + local;
-}
 
 struct TextureSet {
-    Texture2D player{};
+    std::vector<Texture2D> rigParts;
+    std::vector<std::size_t> rigDrawOrder;
     Texture2D background{};
     Texture2D foreground{};
     Texture2D tiles{};
@@ -66,33 +34,51 @@ struct TextureSet {
 bool textureReady(Texture2D texture) { return texture.id != 0 && texture.width > 0 && texture.height > 0; }
 
 void unloadTextures(TextureSet& textures) {
-    if (textureReady(textures.player)) UnloadTexture(textures.player);
+    for (Texture2D texture : textures.rigParts) {
+        if (textureReady(texture)) UnloadTexture(texture);
+    }
     if (textureReady(textures.background)) UnloadTexture(textures.background);
     if (textureReady(textures.foreground)) UnloadTexture(textures.foreground);
     if (textureReady(textures.tiles)) UnloadTexture(textures.tiles);
 }
 
-std::optional<TextureSet> loadTextures(const std::filesystem::path& root, std::string& error) {
+std::optional<TextureSet> loadTextures(const std::filesystem::path& root,
+                                       const RigDefinition& rig, std::string& error) {
     const auto assets = root / "assets/foundation";
     TextureSet textures;
-    textures.player = LoadTexture((assets / "irys_standard.png").string().c_str());
+    for (const RigPart& part : rig.parts) {
+        Texture2D texture = LoadTexture((rig.directory / part.texturePath).string().c_str());
+        if (!textureReady(texture) || texture.width != part.textureWidth ||
+            texture.height != part.textureHeight) {
+            if (textureReady(texture)) UnloadTexture(texture);
+            error = "Rig texture failed to load or changed dimensions: " + part.texturePath.string();
+            unloadTextures(textures);
+            return std::nullopt;
+        }
+        SetTextureFilter(texture, TEXTURE_FILTER_POINT);
+        textures.rigParts.push_back(texture);
+    }
+    textures.rigDrawOrder.resize(rig.parts.size());
+    for (std::size_t i = 0; i < rig.parts.size(); ++i) textures.rigDrawOrder[i] = i;
+    std::stable_sort(textures.rigDrawOrder.begin(), textures.rigDrawOrder.end(),
+        [&](std::size_t a, std::size_t b) {
+            return rig.parts[a].renderOrder < rig.parts[b].renderOrder;
+        });
     textures.background = LoadTexture((assets / "foundation_background.png").string().c_str());
     textures.foreground = LoadTexture((assets / "foundation_foreground.png").string().c_str());
     textures.tiles = LoadTexture((assets / "industrial_tiles.png").string().c_str());
-    if (!textureReady(textures.player) || !textureReady(textures.background) ||
-        !textureReady(textures.foreground) || !textureReady(textures.tiles)) {
+    if (!textureReady(textures.background) || !textureReady(textures.foreground) ||
+        !textureReady(textures.tiles)) {
         error = "A required committed PNG could not be loaded from " + assets.string();
         unloadTextures(textures);
         return std::nullopt;
     }
-    if (textures.player.width != 864 || textures.player.height != 288 ||
-        textures.background.width != 1920 || textures.background.height != 720 ||
+    if (textures.background.width != 1920 || textures.background.height != 720 ||
         textures.foreground.width != 1920 || textures.foreground.height != 720) {
         error = "Foundation PNG dimensions do not match committed metadata";
         unloadTextures(textures);
         return std::nullopt;
     }
-    SetTextureFilter(textures.player, TEXTURE_FILTER_POINT);
     SetTextureFilter(textures.background, TEXTURE_FILTER_POINT);
     SetTextureFilter(textures.foreground, TEXTURE_FILTER_POINT);
     SetTextureFilter(textures.tiles, TEXTURE_FILTER_POINT);
@@ -101,6 +87,8 @@ std::optional<TextureSet> loadTextures(const std::filesystem::path& root, std::s
 
 struct RenderContext {
     const TextureSet& textures;
+    const RigDefinition& rig;
+    const RigAnimations& animations;
     const RoomDefinition& room;
     const PlayerController& playerController;
     const CameraController& cameraController;
@@ -112,9 +100,67 @@ Vector2 toScreen(Vec2 world, Vec2 cameraOrigin) {
             static_cast<float>(std::round(world.y - cameraOrigin.y))};
 }
 
+Vec2 rigWorldPosition(const RigPose& pose, std::size_t index, Vec2 anchor) {
+    return {anchor.x + pose.parts[index].transform.position.x,
+            anchor.y + pose.parts[index].transform.position.y};
+}
+
+void drawRig(const RenderContext& context, const RigPose& pose,
+             Vec2 anchor, Vec2 cameraOrigin) {
+    for (std::size_t index : context.textures.rigDrawOrder) {
+        const RigPart& part = context.rig.parts[index];
+        const RigTransform& transform = pose.parts[index].transform;
+        const Texture2D texture = context.textures.rigParts[index];
+        const Vector2 joint = toScreen(rigWorldPosition(pose, index, anchor), cameraOrigin);
+        Rectangle source{0.0F, 0.0F, static_cast<float>(texture.width), static_cast<float>(texture.height)};
+        double pivotX = part.pivot.x;
+        if (!pose.facingRight) {
+            source.x = static_cast<float>(texture.width);
+            source.width = -source.width;
+            pivotX = static_cast<double>(texture.width) - pivotX;
+        }
+        DrawTexturePro(texture, source,
+            {joint.x, joint.y,
+             static_cast<float>(texture.width * transform.scale.x),
+             static_cast<float>(texture.height * transform.scale.y)},
+            {static_cast<float>(pivotX * transform.scale.x),
+             static_cast<float>(part.pivot.y * transform.scale.y)},
+            static_cast<float>(transform.rotation), WHITE);
+    }
+}
+
+void drawRigJoints(const RenderContext& context, const RigPose& pose,
+                   Vec2 anchor, Vec2 cameraOrigin) {
+    for (std::size_t index = 0; index < context.rig.parts.size(); ++index) {
+        const RigPart& part = context.rig.parts[index];
+        if (part.parent.empty()) continue;
+        const std::size_t parent = context.rig.partIndex(part.parent);
+        const Vector2 a = toScreen(rigWorldPosition(pose, parent, anchor), cameraOrigin);
+        const Vector2 b = toScreen(rigWorldPosition(pose, index, anchor), cameraOrigin);
+        DrawLineV(a, b, Color{64, 184, 197, 115});
+    }
+    const std::array<std::pair<std::string_view, Color>, 15> joints{{
+        {"root", Color{255, 255, 255, 255}}, {"pelvis", Color{255, 193, 77, 255}},
+        {"thigh_front", Color{255, 193, 77, 255}}, {"shin_front", Color{60, 238, 255, 255}},
+        {"foot_front", Color{126, 242, 174, 255}}, {"thigh_rear", Color{255, 193, 77, 255}},
+        {"shin_rear", Color{60, 238, 255, 255}}, {"foot_rear", Color{126, 242, 174, 255}},
+        {"upper_arm_front", Color{255, 118, 173, 255}}, {"forearm_front", Color{203, 130, 255, 255}},
+        {"upper_arm_rear", Color{255, 118, 173, 255}}, {"forearm_rear", Color{203, 130, 255, 255}},
+        {"hand_front", Color{255, 255, 255, 255}}, {"ion_grip", Color{54, 225, 255, 255}},
+        {"ion_blade", Color{184, 249, 255, 255}},
+    }};
+    for (const auto& [name, color] : joints) {
+        const std::size_t index = context.rig.partIndex(name);
+        const Vector2 point = toScreen(rigWorldPosition(pose, index, anchor), cameraOrigin);
+        DrawCircleLines(static_cast<int>(point.x), static_cast<int>(point.y), 3.0F, color);
+        DrawCircleV(point, 1.0F, color);
+    }
+}
+
 void drawDebug(const RenderContext& context, const PlayerState& player,
                const CameraState& camera, Vec2 cameraOrigin, int markerIndex,
-               std::string_view status, double alpha) {
+               std::string_view status, double alpha, const RigPose& pose,
+               Vec2 playerAnchor) {
     const auto screenRect = [&](Rect world) {
         return Rectangle{static_cast<float>(std::round(world.x - cameraOrigin.x)),
                          static_cast<float>(std::round(world.y - cameraOrigin.y)),
@@ -148,6 +194,8 @@ void drawDebug(const RenderContext& context, const PlayerState& player,
         DrawText(context.room.markers[i].name.c_str(), static_cast<int>(marker.x) + 4,
                  static_cast<int>(marker.y) - 7, 6, color);
     }
+
+    drawRigJoints(context, pose, playerAnchor, cameraOrigin);
 
     DrawRectangle(8, 8, 236, 83, Color{7, 10, 13, 225});
     DrawRectangleLines(8, 8, 236, 83, Color{50, 215, 218, 170});
@@ -187,20 +235,18 @@ void renderScene(RenderTexture2D canvas, const RenderContext& context,
                                 static_cast<float>(kCanvasWidth), static_cast<float>(kCanvasHeight)};
     DrawTextureRec(context.textures.background, worldSource, {0.0F, 0.0F}, WHITE);
 
-    const int frame = animationFrame(player);
-    Rectangle source{static_cast<float>((frame % kAtlasColumns) * kFrameSize),
-                     static_cast<float>((frame / kAtlasColumns) * kFrameSize),
-                     static_cast<float>(kFrameSize), static_cast<float>(kFrameSize)};
-    if (!player.facingRight) source.width = -source.width;
-    const Vector2 playerAnchor = toScreen({interpolatedPlayer.x + context.tuning.movement.playerWidth * 0.5,
-                                           interpolatedPlayer.y + context.tuning.movement.playerHeight},
-                                          cameraOrigin);
-    DrawTexturePro(context.textures.player, source,
-                   {playerAnchor.x, playerAnchor.y, static_cast<float>(kFrameSize), static_cast<float>(kFrameSize)},
-                   {48.0F, 86.0F}, 0.0F, WHITE);
+    const Vec2 playerAnchor{interpolatedPlayer.x + context.tuning.movement.playerWidth * 0.5,
+                            interpolatedPlayer.y + context.tuning.movement.playerHeight};
+    const double renderStateTime = std::max(0.0, player.stateTime -
+        (1.0 - alpha) / context.tuning.movement.fixedHz);
+    const RigPose pose = evaluateRig(context.rig, context.animations,
+                                     rigClipName(player.locomotion), renderStateTime,
+                                     player.facingRight);
+    drawRig(context, pose, playerAnchor, cameraOrigin);
     DrawTextureRec(context.textures.foreground, worldSource, {0.0F, 0.0F}, WHITE);
 
-    if (debug) drawDebug(context, player, camera, cameraOrigin, markerIndex, status, alpha);
+    if (debug) drawDebug(context, player, camera, cameraOrigin, markerIndex, status, alpha,
+                         pose, playerAnchor);
     EndTextureMode();
 }
 
@@ -243,19 +289,25 @@ struct CaptureCase {
 
 bool captureValidationSet(RenderTexture2D canvas, const RenderContext& context,
                           const std::filesystem::path& directory) {
-    const std::array<CaptureCase, 12> cases{{
-        {"01_idle.png", LocomotionState::Idle, {112, 570}, {0, 0}, 0.25, true, false},
-        {"02_running.png", LocomotionState::Running, {640, 570}, {245, 0}, 0.23, true, false},
-        {"03_braking.png", LocomotionState::Braking, {720, 570}, {110, 0}, 0.06, true, false},
-        {"04_turning.png", LocomotionState::Turning, {790, 570}, {-70, 0}, 0.04, false, false},
-        {"05_rising.png", LocomotionState::Rising, {1020, 385}, {150, -310}, 0.08, true, false},
-        {"06_apex.png", LocomotionState::Apex, {1240, 330}, {120, 0}, 0.0, true, false},
-        {"07_falling.png", LocomotionState::Falling, {1320, 320}, {100, 330}, 0.08, true, false},
-        {"08_landing.png", LocomotionState::Landing, {1510, 284}, {65, 0}, 0.04, true, false},
-        {"09_orange_platform.png", LocomotionState::Idle, {1210, 368}, {0, 0}, 0.25, true, false},
-        {"10_wide_room.png", LocomotionState::Running, {940, 570}, {245, 0}, 0.14, true, false},
-        {"11_vertical_camera.png", LocomotionState::Apex, {1510, 274}, {0, 0}, 0.0, true, false},
-        {"12_debug_overlay.png", LocomotionState::Falling, {1240, 340}, {130, 250}, 0.1, true, true},
+    const std::array<CaptureCase, 18> cases{{
+        {"01_idle.png", LocomotionState::Idle, {112, 570}, {0, 0}, 0.4, true, false},
+        {"02_acceleration.png", LocomotionState::Accelerating, {500, 570}, {110, 0}, 0.24, true, false},
+        {"03_run_contact.png", LocomotionState::Running, {640, 570}, {245, 0}, 0.0, true, false},
+        {"04_run_recovery.png", LocomotionState::Running, {700, 570}, {245, 0}, 0.16, true, false},
+        {"05_run_opposite.png", LocomotionState::Running, {760, 570}, {245, 0}, 0.32, true, false},
+        {"06_run_recovery_opposite.png", LocomotionState::Running, {820, 570}, {245, 0}, 0.48, true, false},
+        {"07_braking.png", LocomotionState::Braking, {940, 570}, {110, 0}, 0.2, true, false},
+        {"08_turn_start.png", LocomotionState::Turning, {1040, 570}, {-70, 0}, 0.0, false, false},
+        {"09_turn_midpoint.png", LocomotionState::Turning, {1100, 570}, {-70, 0}, 0.24, false, false},
+        {"10_turn_completion.png", LocomotionState::Turning, {1160, 570}, {-70, 0}, 0.48, false, false},
+        {"11_jump_launch.png", LocomotionState::JumpLaunch, {820, 374}, {80, -560}, 0.15, true, false},
+        {"12_rising.png", LocomotionState::Rising, {1020, 385}, {150, -310}, 0.25, true, false},
+        {"13_apex.png", LocomotionState::Apex, {1240, 330}, {120, 0}, 0.2, true, false},
+        {"14_falling.png", LocomotionState::Falling, {1320, 320}, {100, 330}, 0.25, true, false},
+        {"15_soft_landing.png", LocomotionState::Landing, {1510, 284}, {65, 0}, 0.16, true, false},
+        {"16_hard_landing.png", LocomotionState::HardLanding, {1510, 284}, {0, 0}, 0.23, true, false},
+        {"17_facing_left.png", LocomotionState::Idle, {1210, 368}, {0, 0}, 0.4, false, false},
+        {"18_debug_joint_overlay.png", LocomotionState::Falling, {1240, 340}, {130, 250}, 0.25, true, true},
     }};
     bool ok = true;
     for (const auto& capture : cases) {
@@ -264,10 +316,12 @@ bool captureValidationSet(RenderTexture2D canvas, const RenderContext& context,
         player.previousPosition = capture.position;
         player.velocity = capture.velocity;
         player.grounded = capture.state == LocomotionState::Idle ||
+                          capture.state == LocomotionState::Accelerating ||
                           capture.state == LocomotionState::Running ||
                           capture.state == LocomotionState::Braking ||
                           capture.state == LocomotionState::Turning ||
-                          capture.state == LocomotionState::Landing;
+                          capture.state == LocomotionState::Landing ||
+                          capture.state == LocomotionState::HardLanding;
         player.facingRight = capture.facingRight;
         player.locomotion = capture.state;
         player.stateTime = capture.stateTime;
@@ -310,13 +364,25 @@ int main(int argc, char** argv) {
         std::cerr << loadResult.error << '\n';
         return 1;
     }
+    const auto rigDirectory = sourceRoot() / "assets/foundation/irys_rig";
+    const RigLoadResult rigLoad = loadRig(rigDirectory / "rig.json");
+    if (!rigLoad.ok) {
+        std::cerr << rigLoad.error << '\n';
+        return 1;
+    }
+    const AnimationLoadResult animationLoad =
+        loadRigAnimations(rigDirectory / "animations.json", rigLoad.rig);
+    if (!animationLoad.ok) {
+        std::cerr << animationLoad.error << '\n';
+        return 1;
+    }
 
     SetConfigFlags(FLAG_WINDOW_RESIZABLE | FLAG_VSYNC_HINT);
     InitWindow(1280, 720, "Irys+Ion - Player Foundation");
     SetWindowMinSize(kCanvasWidth, kCanvasHeight);
     SetTargetFPS(120);
     std::string assetError;
-    auto textures = loadTextures(sourceRoot(), assetError);
+    auto textures = loadTextures(sourceRoot(), rigLoad.rig, assetError);
     if (!textures) {
         std::cerr << assetError << '\n';
         CloseWindow();
@@ -335,7 +401,8 @@ int main(int argc, char** argv) {
     playerController->reset(player, room.spawn);
     cameraController->reset(camera, {room.spawn.x + tuning.movement.playerWidth * 0.5,
                                      room.spawn.y + tuning.movement.playerHeight * 0.5}, room.bounds);
-    RenderContext context{*textures, room, *playerController, *cameraController, tuning};
+    RenderContext context{*textures, rigLoad.rig, animationLoad.animations,
+                          room, *playerController, *cameraController, tuning};
 
     if (captureDirectory) {
         const bool captured = captureValidationSet(canvas, context, *captureDirectory);
@@ -439,7 +506,8 @@ int main(int argc, char** argv) {
         statusRemaining = std::max(0.0, statusRemaining - GetFrameTime());
         if (statusRemaining <= 0.0) status.clear();
 
-        RenderContext frameContext{*textures, room, *playerController, *cameraController, tuning};
+        RenderContext frameContext{*textures, rigLoad.rig, animationLoad.animations,
+                                   room, *playerController, *cameraController, tuning};
         renderScene(canvas, frameContext, player, camera, clock->interpolationAlpha(), developerMode,
                     markerIndex, status);
         presentCanvas(canvas);
